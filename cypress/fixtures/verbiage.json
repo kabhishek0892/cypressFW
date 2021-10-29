@@ -1,0 +1,5 @@
+{
+    "first_time_login" : "You have logged in for the first time. Please change the password.",
+    "password_expired" :"Your password has expired",
+    "homePage_itineraryMsg" : "Create itinerary & raise a request for Work Travel"
+}

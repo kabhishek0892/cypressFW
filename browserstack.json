@@ -1,0 +1,27 @@
+{
+    "auth": {
+        "username": "lokeshmittal_7bvFx0",
+        "access_key": "bxyPxqxEpaRw5oTPKuMV"
+    },
+    "browsers": [
+        {
+            "browser": "chrome",
+            "os": "Windows 10",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        }
+    ],
+    "run_settings": {
+        "cypress_config_file": "./cypress.json",
+        "project_name": "Q2T-Automation",
+        "build_name": "Login Page Test",
+        "exclude": ["cypress/integration/1-getting-started/*.js", "cypress/integration/2-advanced-examples/*.js"],
+        "parallels": "5"
+    },
+    "connection_settings": {
+        "local": false
+    },
+    "disable_usage_reporting": false
+}

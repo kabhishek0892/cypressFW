@@ -1,0 +1,222 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-10-07T09:19:04.699Z",
+    "end": "2021-10-07T09:19:30.904Z",
+    "duration": 26107,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a6135c85-690e-4f37-8d37-7447c7a86a53",
+      "title": "",
+      "fullFile": "cypress/integration/Q2T-UI-Tests/Login/LoginPageTest.spec.js",
+      "file": "cypress/integration/Q2T-UI-Tests/Login/LoginPageTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7fe6ec2f-70ca-4d47-9334-cc850bc12ce8",
+          "title": "Login Page Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login using email ID",
+              "fullTitle": "Login Page Tests Login using email ID",
+              "timedOut": null,
+              "duration": 4621,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.verifyLoginScreen();\nloginPage.fillEmail(this.creds.email);\nloginPage.clickOnNextButton();\n(0, _apiUtils.resetPwdApi)();\nloginPage.verifyPwdLScreen();\nloginPage.fillPassword(this.creds.password);\nloginPage.clickloginBtn();",
+              "err": {},
+              "uuid": "f51ab2eb-8154-4ec8-a373-032dae45b5fa",
+              "parentUUID": "7fe6ec2f-70ca-4d47-9334-cc850bc12ce8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify CTA Buttons i.e Next , Login and Reset Pwd",
+              "fullTitle": "Login Page Tests Verify CTA Buttons i.e Next , Login and Reset Pwd",
+              "timedOut": null,
+              "duration": 4180,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.verifyButtonEnableDisableBtn('Next');\nloginPage.fillEmail(this.creds.loginId);\nloginPage.clickOnNextButton();\nloginPage.verifyButtonEnableDisableBtn('LOGIN');",
+              "err": {},
+              "uuid": "60dc857c-bdc5-4957-b9d7-662b861c7e8d",
+              "parentUUID": "7fe6ec2f-70ca-4d47-9334-cc850bc12ce8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login using loginID",
+              "fullTitle": "Login Page Tests Login using loginID",
+              "timedOut": null,
+              "duration": 2177,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.fillEmail(this.creds.loginId);\nloginPage.clickOnNextButton(); //resetPwdApi()\nloginPage.fillPassword(this.creds.password);\nloginPage.clickloginBtn();",
+              "err": {},
+              "uuid": "2fe3ada0-7b03-4824-91da-6c19ea9484a4",
+              "parentUUID": "7fe6ec2f-70ca-4d47-9334-cc850bc12ce8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with invalid username",
+              "fullTitle": "Login Page Tests Login with invalid username",
+              "timedOut": null,
+              "duration": 3398,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.fillEmail((0, _commonUtils.RandomFn)('email'));\nloginPage.clickOnNextButton();\nloginPage.fillPassword((0, _commonUtils.RandomFn)('password'));\nloginPage.clickloginBtn();\nloginPage.getEmailPwdError();",
+              "err": {},
+              "uuid": "58bf182d-41b4-49a7-920f-b8111c3b3e14",
+              "parentUUID": "7fe6ec2f-70ca-4d47-9334-cc850bc12ce8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with invalid password",
+              "fullTitle": "Login Page Tests Login with invalid password",
+              "timedOut": null,
+              "duration": 2796,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.fillEmail(this.creds.email);\nloginPage.clickOnNextButton();\nloginPage.fillPassword((0, _commonUtils.RandomFn)());\nloginPage.clickloginBtn();\nloginPage.getEmailPwdError();",
+              "err": {},
+              "uuid": "016ae2ee-b08a-45de-a7ac-1db313a0dce0",
+              "parentUUID": "7fe6ec2f-70ca-4d47-9334-cc850bc12ce8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Reset password",
+              "fullTitle": "Login Page Tests Reset password",
+              "timedOut": null,
+              "duration": 5336,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.fillEmail(this.creds.email);\nloginPage.clickOnNextButton();\nloginPage.clickForgetPassword();\nloginPage.fillEmail(this.creds.email);\nloginPage.clicksendOTPBtn();\nloginPage.verifyOTPScreen();",
+              "err": {},
+              "uuid": "222272bd-0c4a-4f65-8607-883c3188522e",
+              "parentUUID": "7fe6ec2f-70ca-4d47-9334-cc850bc12ce8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Expired Password Test using mock",
+              "fullTitle": "Login Page Tests Expired Password Test using mock",
+              "timedOut": null,
+              "duration": 3599,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.verifyLoginScreen();\nloginPage.fillEmail(this.creds.email);\nloginPage.clickOnNextButton();\nloginPage.verifyPwdLScreen();\nloginPage.fillPassword(this.creds.password);\ncy.intercept('POST', '/login', {\n  fixture: 'expired-pwd-mock.json'\n}).as('login');\nloginPage.clickloginBtn();\nloginPage.verifyExpiredPasswordMsg().should('contain.text', this.msg.password_expired);\nloginPage.clickForgetPassword();\nloginPage.clicksendOTPBtn();",
+              "err": {},
+              "uuid": "2cf4e76f-0cad-472f-bdad-92e6332c4182",
+              "parentUUID": "7fe6ec2f-70ca-4d47-9334-cc850bc12ce8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f51ab2eb-8154-4ec8-a373-032dae45b5fa",
+            "60dc857c-bdc5-4957-b9d7-662b861c7e8d",
+            "2fe3ada0-7b03-4824-91da-6c19ea9484a4",
+            "58bf182d-41b4-49a7-920f-b8111c3b3e14",
+            "016ae2ee-b08a-45de-a7ac-1db313a0dce0",
+            "222272bd-0c4a-4f65-8607-883c3188522e",
+            "2cf4e76f-0cad-472f-bdad-92e6332c4182"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 26107,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "screenshotOnRunFailure": true,
+        "reportDir": "cypress/reports/mocha",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

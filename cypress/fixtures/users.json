@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Name1",
+    "loginid": "Abhishek",
+    "email": "Abhishek.kumar3@go-mmt.com",
+    "password": "test@123"
+  },
+  {
+    "name": "Name2",
+    "loginid": "gauravk",
+    "email": "gaurav.kesharwani@go-mmt.com",
+    "password": "Track@123"
+  },
+  {
+    "name": "Name1",
+    "loginid": "pratikshit",
+    "email": "pratikshit.bansal@go-mmt.com",
+    "password": "test@123"
+  }
+]

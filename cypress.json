@@ -1,0 +1,26 @@
+{
+    "baseUrl" :"http://partner.quest2travel.org:8004",
+    "experimentalSourceRewriting": false,
+    "clientRoute": "/",
+      "chromeWebSecurity":true,
+      "screenshotsFolder": "cypress/reports/mochareports/assets",
+      "projectId":"1234",
+      "reporter": "mochawesome",
+      "reporterOptions": {
+        "screenshotOnRunFailure": true,
+        "reportDir": "cypress/reports/mocha",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "video": false,
+      "env": {
+        "username": "Abhishek",
+        "password": "test@123",
+        "email":"Abhishek.kumar3@go-mmt.com",
+        "APIURL": "http://partnerapi.quest2travel.org:8003"
+      }
+    }
+    

@@ -1,0 +1,26 @@
+{
+    "data": {},
+    "errorDetails": [
+        {
+            "code": "3",
+            "downStreamErrorDetails": [
+                {
+                    "code": "3",
+                    "fieldName": "password",
+                    "linkTexts": [
+                        "Reset Password"
+                    ],
+                    "links": [
+                        "/forgotPassword"
+                    ],
+                    "message": "Your password has expired. Please change the password by ${link}",
+                    "type": "Password"
+                }
+            ],
+            "message": "Your password has expired. Please change the password by ${link}",
+            "service": "LoginService",
+            "type": "Password"
+        }
+    ],
+    "status": "Failed"
+}
