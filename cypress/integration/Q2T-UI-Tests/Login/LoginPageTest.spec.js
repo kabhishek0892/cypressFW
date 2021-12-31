@@ -16,12 +16,12 @@ describe('Login Page Tests', function () {
     })
     const loginPage = new LoginPage()
 
-    it('Login using email ID', () => {
+    it.only('Login using email ID', () => {
         loginPage.verifyLoginScreen()
         loginPage.fillEmail(this.creds.email)
         loginPage.clickOnNextButton()
-        resetPwdApi()
-        loginPage.verifyPwdLScreen()
+        //resetPwdApi()
+        //loginPage.verifyPwdLScreen()
         loginPage.fillPassword(this.creds.password)
         loginPage.clickloginBtn()
     })

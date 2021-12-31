@@ -1,30 +1,22 @@
+import HomePage from './HomePage'
 import { loginWithEmail } from '../Utils/apiUtils'
+import {CONSTANTS} from "../Utils/constants"
 
-describe('Home Page Tests with different types of views',()=>{
+describe('Home Page Tests with different types of views',function(){
+    const homePage = new HomePage();
     it('No access to Expenses card in Quick Links',()=>{
+        
     loginWithEmail(Cypress.env('email'),Cypress.env('password'))
     cy.visit('/home/')
+    //cy.Login(Cypress.env('email'),Cypress.env('password'))
     cy.viewport('macbook-16')
-   /* cy.request({
-        method: 'GET',
-        url: 'http://localhost:3000/profile',
-      }).should((response) => {
-        expect(response.status).eq(200)
-        cy.log(JSON.stringify(response.body))
-     }) */
-    
-   // cy.intercept('GET', '/home/profile', { fixture: 'profileAndHeader.json' }).as('profile')
-    /* cy.request({
-        method: 'GET',
-        url: Cypress.env('APIURL') +'/home/profile'
-      },
-      {
-          statusCode :200,
-          body  :[{fixture: 'profileAndHeader.json'}]
-      }).as('mockProfileresponse').should((response)=>
-      { 
-          expect(response.status).eq(200) 
-          expect(response).property('clientId').to.equal('Mock')
-    cy.log(response.body)})*/
+    homePage.verifyWelcomeMessage()
+    homePage.verifyRequestItinerary(CONSTANTS.HOMEPAGE_ITINERARY)
+    homePage.verifyBookPersonalTravelandLobs()
+    homePage.clickonCloseIconinBookingPopup()
+    homePage.verifyQuickLinks()
+    homePage.verifyHamburgerMenu()
+    homePage.verifySupportMenu()
+    homePage.logout()
 })
 })

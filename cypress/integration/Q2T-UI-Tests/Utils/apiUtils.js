@@ -1,7 +1,7 @@
 export const resetPwdApi = () => {
   cy.request({
     method: 'POST',
-    url: Cypress.env('APIURL') +'/resetPassword',
+    url: Cypress.env('APIURL') +'/login'+'/resetPassword',
    
     body: {
           "loginid": Cypress.env('username'),
@@ -23,7 +23,12 @@ export const loginWithEmail = (email,password) => {
           "password": password
          }
   }).should((response) => {
-    expect(response.status).eq(200)
+
+   /* if((response.body.status)!="Sucesss")
+    {
+      resetPwdApi()
+    } */
+
     cy.log(JSON.stringify(response.body))
  })
 }
@@ -42,3 +47,16 @@ export const loginWithId = (loginId,password) => {
     cy.log(JSON.stringify(response.body))
  })
 }
+
+export const logout =()=>{
+  cy.request('POST', Cypress.env('APIURL') +'/home/logout').then(
+    (response) => {
+      // response.body is automatically serialized into JSON
+      expect(response.isOkStatusCode)
+      cy.log(JSON.stringify(response.body))
+    }
+  )
+}
+
+
+//incompleteRequest

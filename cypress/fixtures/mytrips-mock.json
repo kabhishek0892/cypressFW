@@ -1,0 +1,158 @@
+{
+    "data": {
+        "headerName": "My Trips",
+        "trips": [
+            {
+                "clTripNo": "198591",
+                "nameOfTraveller": "Mr. Abhishek Kumar",
+                "purpose": "O",
+                "redirectionLink": "http://staging12.quest2travel.org/frontend/airlineservices/domairbookingDetails/198591_13-11-2021_08:09:46_PM",
+                "serviceData": {
+                    "Flight": [
+                        {
+                            "layoverCount": 0,
+                            "logo": "http://staging12.quest2travel.org/public/frontend/images/SG.png",
+                            "tripAirName": "Spicejet",
+                            "tripArrtime": "2021-12-27T08:15:00",
+                            "tripDeptime": "2021-12-27T06:50:00",
+                            "tripDuration": "85",
+                            "tripFlightNo": "SG-3433",
+                            "tripFromCity": "Ahmedabad",
+                            "tripFromCityCode": "AMD",
+                            "tripSeatstatus": "",
+                            "tripToCity": "Pune",
+                            "tripToCityCode": "PNQ",
+                            "tripWebCheckInStatus": ""
+                        }
+                    ]
+                },
+                "serviceDetails": {
+                    "cta": [
+                        {
+                            "text": "VIEW DETAILS",
+                            "type": "view"
+                        }
+                    ],
+                    "info": "One Way Flight | Mr. Abhishek + 3 travellers",
+                    "infoDesktop": "One Way Flight | Booking ID #198591-20211113200946 | Direct Flight",
+                    "status": "UPCOMING",
+                    "subtitle": "Mon,<span class='latoBold'> Dec 27</span>, 06:50",
+                    "title": "Ahmedabad → Pune"
+                },
+                "serviceType": "Flight",
+                "travellerString": "Mr. Abhishek + 3 travellers",
+                "tripBookingDate": "2021-11-13T20:09:46",
+                "tripBookingId": "198591-20211113200946",
+                "tripCancellationDate": "",
+                "tripNo": "198591",
+                "tripTravelStartDate": "2021-12-27T06:50:00",
+                "trpStatus": "UP"
+            },
+            {
+                "clTripNo": "197337",
+                "nameOfTraveller": "Ms. Ayushi Mittal",
+                "purpose": "O",
+                "redirectionLink": "http://staging12.quest2travel.org/frontend/airlineservices/domairbookingDetails/197337_02-11-2021_05:01:45_PM",
+                "serviceData": {
+                    "Flight": [
+                        {
+                            "layoverCount": 1,
+                            "logo": "http://staging12.quest2travel.org/public/frontend/images/AI.png",
+                            "tripAirName": "Air India",
+                            "tripArrtime": "2021-12-14T10:50:00",
+                            "tripDeptime": "2021-12-14T08:45:00",
+                            "tripDuration": "125,135",
+                            "tripFlightNo": "AI-852,AI-764",
+                            "tripFromCity": "Pune",
+                            "tripFromCityCode": "PNQ",
+                            "tripSeatstatus": "",
+                            "tripToCity": "Kolkata",
+                            "tripToCityCode": "CCU",
+                            "tripWebCheckInStatus": ""
+                        },
+                        {
+                            "layoverCount": 1,
+                            "logo": "http://staging12.quest2travel.org/public/frontend/images/6E.png",
+                            "tripAirName": "Indigo",
+                            "tripArrtime": "2021-12-17T12:40:00",
+                            "tripDeptime": "2021-12-17T10:05:00",
+                            "tripDuration": "155,125",
+                            "tripFlightNo": "6E-2008,6E-286",
+                            "tripFromCity": "Kolkata",
+                            "tripFromCityCode": "CCU",
+                            "tripSeatstatus": "",
+                            "tripToCity": "Pune",
+                            "tripToCityCode": "PNQ",
+                            "tripWebCheckInStatus": ""
+                        }
+                    ]
+                },
+                "serviceDetails": {
+                    "cta": [
+                        {
+                            "text": "VIEW DETAILS",
+                            "type": "view"
+                        }
+                    ],
+                    "info": "Round Trip Flight | Ms. Ayushi + 1 traveller",
+                    "infoDesktop": "Round Trip Flight | Booking ID #197337-20211102170145",
+                    "status": "UPCOMING",
+                    "subtitle": "Tue,<span class='latoBold'> Dec 14</span>, 08:45 - <span class='ml0'>Fri,<span class='latoBold'> Dec 17</span>, 10:05</span>",
+                    "title": "Pune ↔ Kolkata"
+                },
+                "serviceType": "Flight",
+                "travellerString": "Ms. Ayushi + 1 traveller",
+                "tripBookingDate": "2021-11-02T17:01:45",
+                "tripBookingId": "197337-20211102170145",
+                "tripCancellationDate": "",
+                "tripNo": "197337",
+                "tripTravelStartDate": "2021-12-14T08:45:00",
+                "trpStatus": "UP"
+            },
+            {
+                "clTripNo": "197154",
+                "nameOfTraveller": "Ms. Ayushi Mittal",
+                "purpose": "O",
+                "redirectionLink": "http://staging12.quest2travel.org/frontend/hotelservices/hotelitinerarydetail/197154/525813/500100033532",
+                "serviceData": {
+                    "Hotel": {
+                        "tripHtlCheckIn": "2021-12-05T14:00:00",
+                        "tripHtlCheckOut": "2021-12-07T12:00:00",
+                        "tripHtlCityName": "Mumbai",
+                        "tripHtlGmapURL": "https://www.google.com/maps/search/?api=1&query=Trident+Bandra+KurlaMumbai",
+                        "tripHtlName": "Trident Bandra Kurla"
+                    }
+                },
+                "serviceDetails": {
+                    "cta": [
+                        {
+                            "text": "VIEW DETAILS",
+                            "type": "view"
+                        },
+                        {
+                            "data": {
+                                "coordinatesInfo": "https://www.google.com/maps/search/?api=1&query=Trident+Bandra+KurlaMumbai"
+                            },
+                            "text": "DIRECTIONS",
+                            "type": "directions"
+                        }
+                    ],
+                    "info": "Hotel in Mumbai | Ms. Ayushi",
+                    "infoDesktop": "Hotel in Mumbai | Booking ID #500100033532",
+                    "status": "UPCOMING",
+                    "subtitle": "Sun,<span class='latoBold'> Dec 5</span> - Tue,<span class='latoBold'> Dec 7</span>",
+                    "title": "Trident Bandra Kurla"
+                },
+                "serviceType": "Hotel",
+                "travellerString": "Ms. Ayushi",
+                "tripBookingDate": "2021-10-29T17:56:50",
+                "tripBookingId": "500100033532",
+                "tripNo": "197154",
+                "tripTravelStartDate": "2021-12-05T14:00:00",
+                "trpStatus": "UP"
+            }
+        ]
+    },
+    "errorDetails": [],
+    "status": "Success"
+}

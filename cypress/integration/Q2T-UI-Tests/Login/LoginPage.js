@@ -1,3 +1,5 @@
+import { CONSTANTS } from "../Utils/constants";
+
 class LoginPage {
 
     fillEmail(value) {
@@ -15,7 +17,7 @@ class LoginPage {
         return cy.get('[type="button"]').contains('OTP').should('be.enabled').click()
     }
     getEmailPwdError() {
-        return cy.get('.errorText').should('have.text', 'Incorrect password or the user Id provided is wrong.');
+        return cy.get('.errorText').should('have.text', CONSTANTS.INCORRECT_PWD_MSG);
     }
 
     clikcOnClearFieldIcon() {
@@ -31,20 +33,20 @@ class LoginPage {
     }
 
     verifyLoginScreen() {
-        cy.get('.form>h2').should('exist').contains('Login to your Company Account')
-        cy.get('label[for="userInputField"]').should('exist').contains('Enter your Login ID OR Email Address')
+        cy.get('.form>h2').should('exist').contains(CONSTANTS.LOGIN_MSG)
+        cy.get('label[for="userInputField"]').should('exist').contains(CONSTANTS.ENTER_LOGIN_ID)
         cy.get('#userInputField').invoke('attr', 'placeholder').should('eq', "vainavi.va@company")
         return this
     }
     verifyPwdLScreen() {
-        cy.get('form>h2').should('exist').contains('Enter Password')
+        cy.get('form>h2').should('exist').contains(CONSTANTS.ENTER_PWD)
         cy.get('label[for="userInputField"]').should('exist').contains('Password')
         cy.get(".setPwdDesc").should('have.text', "Enter the password for " + Cypress.env('email'))
         return this
     }
     verifyOTPScreen() {
         cy.get('.popupContent>h2').should('have.text', 'Verify OTP')
-        cy.get('.verifyDesc').should('have.text', 'One Time Password (OTP) has been sent to your registered email address and mobile number.')
+        cy.get('.verifyDesc').should('have.text', CONSTANTS.OTP_MSG)
         cy.get('[type="button"]').contains('OTP').should('be.disabled')
         return this
     }

@@ -1,0 +1,46 @@
+{
+    "data": {
+        "headerName": "Trip Requests",
+        "isApprover": false,
+        "requestTabDetails": [
+            {
+                "displayName": "RAISED BY YOU",
+                "requests": [
+                    {
+                        "actualTripStartDate": "2022-01-28T18:30:00Z[UTC]",
+                        "fromToCity": "Delhi - Pune",
+                        "linksMap": {
+                            "requestDetails": "http://staging12.quest2travel.org/frontend/request/showCombinedRequestDetail/207080"
+                        },
+                        "optedLobs": [
+                            {
+                                "icon": "funnelFlightIcon",
+                                "name": "Flight"
+                            }
+                        ],
+                        "requestStatus": {
+                            "displayStatus": "Request sent to Mr. Quest Approver",
+                            "sendReminder": true,
+                            "status": "request_sent"
+                        },
+                        "tripCost": "0",
+                        "tripDates": "Wed,<span class='latoBold'> Jan 29</span> - Fri,<span class='latoBold'> Jan 31</span>",
+                        "tripInfo": "1 people, 2 days",
+                        "tripLocation": "Pune",
+                        "tripNo": "207080",
+                        "tripRequesterName": "Mr. Quest Employee",
+                        "tripStatus": "PA",
+                        "tripStatusDisplayNm": "Pending for Approval",
+                        "tripType": "Trip ID #207080"
+                    }
+                ]
+            },
+            {
+                "displayName": "FOR YOU TO APPROVE",
+                "requests": []
+            }
+        ]
+    },
+    "errorDetails": [],
+    "status": "Success"
+}

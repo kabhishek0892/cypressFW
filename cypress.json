@@ -1,5 +1,5 @@
 {
-    "baseUrl" :"http://partner.quest2travel.org:8004",
+    "baseUrl" :"http://partner.quest2travel.org:8006",
     "experimentalSourceRewriting": false,
     "clientRoute": "/",
       "chromeWebSecurity":true,
@@ -18,7 +18,7 @@
       "video": false,
       "env": {
         "username": "Abhishek",
-        "password": "test@123",
+        "password": "Test@123",
         "email":"Abhishek.kumar3@go-mmt.com",
         "APIURL": "http://partnerapi.quest2travel.org:8003"
       }

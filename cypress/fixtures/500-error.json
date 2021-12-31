@@ -1,0 +1,20 @@
+{
+    "data": {},
+    "errorDetails": [
+        {
+            "code": "500",
+            "downStreamErrorDetails": [
+                {
+                    "code": "500",
+                    "fieldName": "",
+                    "message": "Null Pointer Exception in Response handler",
+                    "type": "System"
+                }
+            ],
+            "message": "Something went wrong. Please try again later",
+            "service": "HomeService",
+            "type": "System"
+        }
+    ],
+    "status": "Failed"
+}                                                                                                                                                                       

@@ -1,0 +1,104 @@
+{
+    "data": {
+        "headerName": "Trip Requests",
+        "isApprover": true,
+        "requestTabDetails": [
+            {
+                "displayName": "RAISED BY YOU",
+                "requests": [
+                    {
+                        "actualTripStartDate": "2021-11-30T18:30:00Z[UTC]",
+                        "fromToCity": "Ada - Asd",
+                        "linksMap": {
+                            "requestDetails": "http://staging12.quest2travel.org/frontend/viewapprovals/showCombinedApproverDetails/201088"
+                        },
+                        "optedLobs": [
+                            {
+                                "icon": "funnelFlightIcon",
+                                "name": "Flight"
+                            }
+                        ],
+                        "requestStatus": {
+                            "displayStatus": "Request sent to   ",
+                            "sendReminder": true,
+                            "status": "request_sent"
+                        },
+                        "tripCost": "0",
+                        "tripDates": "Tue,<span class='latoBold'> Nov 30</span> - Sat,<span class='latoBold'> Dec 4</span>",
+                        "tripInfo": "1 people, 4 days",
+                        "tripLocation": "Asd",
+                        "tripNo": "201088",
+                        "tripRequesterName": "Mr. Abhishek Kumar",
+                        "tripStatus": "PA",
+                        "tripStatusDisplayNm": "Pending for Approval",
+                        "tripType": "Trip ID #201088"
+                    },
+                    {
+                        "actualTripStartDate": "2021-12-04T18:30:00Z[UTC]",
+                        "fromToCity": "Delhi - Bangalore",
+                        "linksMap": {
+                            "requestDetails": "http://staging12.quest2travel.org/frontend/viewapprovals/showCombinedApproverDetails/200875"
+                        },
+                        "optedLobs": [
+                            {
+                                "icon": "funnelRailIcon",
+                                "name": "Rail"
+                            }
+                        ],
+                        "requestStatus": {
+                            "displayStatus": "Request sent to Mr. Pratikshit Bansal",
+                            "sendReminder": true,
+                            "status": "request_sent"
+                        },
+                        "tripCost": "1850",
+                        "tripDates": "Sun,<span class='latoBold'> Dec 5</span> - Tue,<span class='latoBold'> Dec 7</span>",
+                        "tripInfo": "1 people, 2 days",
+                        "tripLocation": "Bangalore",
+                        "tripNo": "200875",
+                        "tripRequesterName": "Mr. Abhishek Kumar",
+                        "tripStatus": "PA",
+                        "tripStatusDisplayNm": "Pending for Approval",
+                        "tripType": "Trip ID #200875"
+                    },
+                    {
+                        "actualTripStartDate": "2021-12-15T18:30:00Z[UTC]",
+                        "fromToCity": "Pune - Delhi",
+                        "linksMap": {
+                            "requestDetails": "http://staging12.quest2travel.org/frontend/viewapprovals/showCombinedApproverDetails/201999"
+                        },
+                        "optedLobs": [
+                            {
+                                "icon": "funnelFlightIcon",
+                                "name": "Flight"
+                            },
+                            {
+                                "icon": "funnelCabIcon",
+                                "name": "Cab"
+                            }
+                        ],
+                        "requestStatus": {
+                            "displayStatus": "Request sent to Mr. Pratikshit Bansal",
+                            "sendReminder": false,
+                            "status": "request_sent"
+                        },
+                        "tripCost": "1380",
+                        "tripDates": "Thu,<span class='latoBold'> Dec 16</span> - Sat,<span class='latoBold'> Dec 25</span>",
+                        "tripInfo": "1 people, 9 days",
+                        "tripLocation": "Delhi",
+                        "tripNo": "201999",
+                        "tripRequesterName": "Mr. Abhishek Kumar",
+                        "tripStatus": "PA",
+                        "tripStatusDisplayNm": "Pending for Approval",
+                        "tripType": "Trip ID #201999"
+                    }
+                ]
+            },
+            {
+                "displayName": "FOR YOU TO APPROVE",
+                "requests": []
+            }
+        ]
+    },
+    "errorDetails": [],
+    "status": "Success"
+}

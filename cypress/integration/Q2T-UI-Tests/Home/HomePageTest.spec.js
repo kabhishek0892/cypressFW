@@ -1,4 +1,5 @@
 import { loginWithId } from '../Utils/apiUtils'
+import { CONSTANTS } from '../Utils/constants'
 import HomePage from './HomePage'
 const userdata = require('/Users/mmt9361/Corp-Q2T-Test-Automation/cypress/fixtures/users.json')
 
@@ -9,9 +10,6 @@ userdata.forEach((credentials) => {
         beforeEach(() => {
             cy.fixture('testdata').then(creds => {
                 this.creds = creds;
-            })
-            cy.fixture('verbiage').then(text => {
-                this.text = text;
             })
             cy.fixture('users').then(user => {
                 this.user = user;
@@ -25,7 +23,7 @@ userdata.forEach((credentials) => {
 
         it('Verify Home Page', () => {
             homePage.verifyWelcomeMessage()
-            homePage.verifyRequestItinerary(this.text.homePage_itineraryMsg)
+            homePage.verifyRequestItinerary(CONSTANTS.HOMEPAGE_ITINERARY)
             homePage.verifyBookPersonalTravelandLobs()
             homePage.clickonCloseIconinBookingPopup()
             homePage.verifyQuickLinks()

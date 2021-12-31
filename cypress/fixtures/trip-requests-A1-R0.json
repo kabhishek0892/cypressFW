@@ -1,0 +1,43 @@
+{
+    "data": {
+        "headerName": "Trip Requests",
+        "isApprover": true,
+        "requestTabDetails": [
+            {
+                "displayName": "FOR YOU TO APPROVE",
+                "requests": [
+                    
+                    {
+                        "actualTripStartDate": "2021-12-08T18:30:00Z[UTC]",
+                        "approverId": "Q2T0246717",
+                        "fromToCity": "Delhi - Mumbai",
+                        "linksMap": {
+                            "requestDetails": "http://staging12.quest2travel.org/frontend/viewapprovals/showCombinedApproverDetails/201465"
+                        },
+                        "optedLobs": [
+                            {
+                                "icon": "funnelFlightIcon",
+                                "name": "Flight"
+                            }
+                        ],
+                        "tripCost": "10246",
+                        "tripDates": "Thu,<span class='latoBold'> Dec 9</span> - Sun,<span class='latoBold'> Dec 12</span>",
+                        "tripInfo": "1 people, 3 days",
+                        "tripLocation": "Mum",
+                        "tripNo": "201465",
+                        "tripRequesterName": "Mr. Gaurav Kesharvani",
+                        "tripStatus": "PA",
+                        "tripStatusDisplayNm": "Pending for Approval",
+                        "tripType": "REQUESTED BY"
+                    }
+                ]
+            },
+            {
+                "displayName": "RAISED BY YOU",
+                "requests": []
+            }
+        ]
+    },
+    "errorDetails": [],
+    "status": "Success"
+}
