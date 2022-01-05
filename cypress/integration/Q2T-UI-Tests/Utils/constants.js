@@ -31,5 +31,7 @@ export const CONSTANTS = {
     CNF_REJECT_REQUEST  : "Confirm and reject request",
     REQUEST_SENT_TO :"Request sent to",
     TRIP_ID : "Trip ID #",
-    TRIP_REQUEST : "Trip Requests"
+    TRIP_REQUEST : "Trip Requests",
+    FOR_YOU_TO_APPROVE : "FOR YOU TO APPROVE",
+    RAISED_BY_YOU : "RAISED BY YOU",
     };

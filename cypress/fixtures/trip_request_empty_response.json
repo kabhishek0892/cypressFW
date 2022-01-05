@@ -1,0 +1,18 @@
+{
+    "data": {
+        "headerName": "Trip Requests",
+        "isApprover": false,
+        "requestTabDetails": [
+            {
+                "displayName": "RAISED BY YOU",
+                "requests": []
+            },
+            {
+                "displayName": "FOR YOU TO APPROVE",
+                "requests": []
+            }
+        ]
+    },
+    "errorDetails": [],
+    "status": "Success"
+}
