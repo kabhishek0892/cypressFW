@@ -1,0 +1,9 @@
+{
+    "data": {
+        "headerName": "My Trips",
+        "nextPage": true,
+        "trips": []
+    },
+    "errorDetails": [],
+    "status": "Success"
+}

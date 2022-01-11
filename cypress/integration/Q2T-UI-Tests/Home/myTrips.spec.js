@@ -26,4 +26,27 @@ describe('My Trips Test suite', function () {
         verifyListisNotNull('.makeFlex > .myTripDtl > .tripTraveller')
 
     })
+    it('Empty request', () => {
+        cy.intercept("GET", "/home/myTrips", { fixture: "my_trips_empty_response.json" })
+        cy.visit('/home/') 
+        cy.get('.myTripsWrap > h2').should('not.exist')
+    })
+
+    it('500 Error', () => {
+        cy.intercept("GET", "/home/myTrips", { statusCode: 500 })
+        cy.visit('/home/')
+        cy.get('.myTripsWrap > h2').should('not.exist')
+    })
+
+    it('400 Error', () => {
+        cy.intercept("GET", "/home/myTrips", { statusCode: 400 })
+        cy.visit('/home/')
+        cy.get('.myTripsWrap > h2').should('not.exist')
+    })
+
+    it('302 Error', () => {
+        cy.intercept("GET", "/home/myTrips", { statusCode: 302 })
+        cy.visit('/home/')
+        cy.get('.myTripsWrap > h2').should('not.exist') 
+    }) 
 })

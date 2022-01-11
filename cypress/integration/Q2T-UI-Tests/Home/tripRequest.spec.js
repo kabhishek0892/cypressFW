@@ -1,5 +1,5 @@
 import { loginWithEmail, loginWithId } from '../Utils/apiUtils'
-import { rejectRequest, approveRequest, sendReminder ,verifyListisNotNull,verifyFormattedText} from '../Utils/commonUtils'
+import { rejectRequest, approveRequest, sendReminder, verifyListisNotNull, verifyFormattedText } from '../Utils/commonUtils'
 import { CONSTANTS } from '../Utils/constants'
 
 describe('Only Requestor Test suite', () => {
@@ -25,20 +25,20 @@ describe('My Trips Requests Test suite', function () {
     beforeEach(() => {
         loginWithEmail(Cypress.env('email'), Cypress.env('password'))
     })
-     afterEach(()=>{
+    afterEach(() => {
         cy.screenshot()
     })
 
     it('Requestor and Approver view', () => {
         cy.intercept("GET", "/home/tripRequests", { fixture: "trip-requests-both-mock.json" })
         cy.visit('/home/')
-        cy.get('.tripReqTab > .active').should('have.text',CONSTANTS.FOR_YOU_TO_APPROVE)
+        cy.get('.tripReqTab > .active').should('have.text', CONSTANTS.FOR_YOU_TO_APPROVE)
         cy.get('.tripReqTab > li').should(($ls) => {
             expect($ls, 'Two tabs').to.have.length(2)
             expect($ls.eq(0)).to.have.text(CONSTANTS.FOR_YOU_TO_APPROVE)
             expect($ls.eq(0)).to.have.class('active')
             expect($ls.eq(1)).to.have.text(CONSTANTS.RAISED_BY_YOU)
-           // expect($ls.eq(1), 'My Trips').to.contain(CONSTANTS.MY_TRIP)
+            // expect($ls.eq(1), 'My Trips').to.contain(CONSTANTS.MY_TRIP)
         })
         verifyListisNotNull('.reqPopsRow > .makeFlex > .travelAt')
         verifyListisNotNull('.reqPopsRow > .pushRight > .reqPrice') // add number check && > 0 price check
@@ -56,7 +56,7 @@ describe('My Trips Requests Test suite', function () {
         cy.visit('/home/')
         cy.intercept("POST", "/home/approve", { fixture: "trip_approve.json" })
         approveRequest(201465)
-       
+
     })
 
     it('Requests raised but nothing to approve', () => {
@@ -71,16 +71,16 @@ describe('My Trips Requests Test suite', function () {
     })
 
     //to do
-   /* it('1 trip FOR YOU TO APPROVE and 0 trip in RAISED BY YOU ', () => {
-        cy.intercept("GET", "/home/tripRequests", { fixture: "trip-requests-A1-R0.json" })
-        cy.visit('/home/')
-        cy.screenshot()
-    })
-    it('0 trip FOR YOU TO APPROVE and 1 trip in RAISED BY YOU ', () => {
-        cy.intercept("GET", "/home/tripRequests", { fixture: "trip-requests-A0-R1.json" })
-        cy.visit('/home/')
-        cy.screenshot()
-    }) */
+    /* it('1 trip FOR YOU TO APPROVE and 0 trip in RAISED BY YOU ', () => {
+         cy.intercept("GET", "/home/tripRequests", { fixture: "trip-requests-A1-R0.json" })
+         cy.visit('/home/')
+         cy.screenshot()
+     })
+     it('0 trip FOR YOU TO APPROVE and 1 trip in RAISED BY YOU ', () => {
+         cy.intercept("GET", "/home/tripRequests", { fixture: "trip-requests-A0-R1.json" })
+         cy.visit('/home/')
+         cy.screenshot()
+     }) */
 
     //Cypress._.times(5, () => {
     it('Approve Request - FOR YOU TO APPROVE Section', () => {
@@ -105,30 +105,30 @@ describe('My Trips Requests Test suite', function () {
         sendReminder(207080)
     })
 
-    it.only('Empty request', () => {
-         cy.intercept("GET", "/home/tripRequests", { fixture: "trip_request_empty_response.json" })
-         cy.visit('/home/') 
-         cy.get('.tripReqHeading > h2').should('not.exist')
-     })
- 
-     it('500 Error', () => {
-         cy.intercept("GET", "/home/tripRequests", { statusCode: 500 })
-         cy.visit('/home/')
-         cy.get('.tripReqHeading > h2').should('not.be.visible').and('not.exist')
-     })
- 
-     it('404 Error', () => {
-         cy.intercept("GET", "/home/tripRequests", { statusCode: 404 })
-         cy.visit('/home/')
-         cy.get('.tripReqHeading > h2').should('not.be.visible').and('not.exist')
-     })
- 
-     it('302 Error', () => {
-         cy.intercept("GET", "/home/tripRequests", { statusCode: 302 })
-         cy.visit('/home/')
-         cy.get('.tripReqHeading > h2').should('not.be.visible').and('not.exist')
+    it('Empty request', () => {
+        cy.intercept("GET", "/home/tripRequests", { fixture: "trip_request_empty_response.json" })
+        cy.visit('/home/')
+        cy.get('.tripReqHeading > h2').should('not.exist')
+    })
 
-         
-     }) 
+    it('500 Error', () => {
+        cy.intercept("GET", "/home/tripRequests", { statusCode: 500 })
+        cy.visit('/home/')
+        cy.get('.tripReqHeading > h2').should('not.be.visible').and('not.exist')
+    })
+
+    it('404 Error', () => {
+        cy.intercept("GET", "/home/tripRequests", { statusCode: 404 })
+        cy.visit('/home/')
+        cy.get('.tripReqHeading > h2').should('not.be.visible').and('not.exist')
+    })
+
+    it('302 Error', () => {
+        cy.intercept("GET", "/home/tripRequests", { statusCode: 302 })
+        cy.visit('/home/')
+        cy.get('.tripReqHeading > h2').should('not.be.visible').and('not.exist')
+
+
+    })
 
 })
