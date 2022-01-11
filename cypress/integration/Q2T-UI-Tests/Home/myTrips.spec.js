@@ -1,7 +1,7 @@
 import { loginWithEmail } from '../Utils/apiUtils'
 import { CONSTANTS } from "../Utils/constants"
 import { verifyListisNotNull } from '../Utils/commonUtils'
-import { eq } from 'lodash'
+
 describe('My Trips Test suite', function () {
     before(() => {
         cy.viewport('macbook-16')
