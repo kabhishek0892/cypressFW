@@ -1,3 +1,4 @@
+import HomePage from "../Home/HomePage";
 import { CONSTANTS } from "../Utils/constants";
 
 class LoginPage {
@@ -11,7 +12,8 @@ class LoginPage {
     }
 
     clickloginBtn() {
-        return cy.get('[type="button"]').contains('LOGIN').should('be.enabled').click()
+        cy.get('[type="button"]').contains('LOGIN').should('be.enabled').click()
+        return new HomePage
     }
     clicksendOTPBtn() {
         return cy.get('[type="button"]').contains('OTP').should('be.enabled').click()
@@ -35,8 +37,7 @@ class LoginPage {
     verifyLoginScreen() {
         cy.get('.form>h2').should('exist').contains(CONSTANTS.LOGIN_MSG)
         cy.get('label[for="userInputField"]').should('exist').contains(CONSTANTS.ENTER_LOGIN_ID)
-        cy.get('#userInputField').invoke('attr', 'placeholder').should('eq', "vainavi.va@company")
-        return this
+        cy.get('#userInputField').invoke('attr', 'placeholder').should('eq', CONSTANTS.LOGIN_PLCAEHOLDER)
     }
     verifyPwdLScreen() {
         cy.get('form>h2').should('exist').contains(CONSTANTS.ENTER_PWD)

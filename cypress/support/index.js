@@ -27,13 +27,14 @@ Cypress.on('test:after:run', (test, runnable) => {
   }
 });
 
-/*Cypress.on('window:before:load', (win) => {
+
+Cypress.on('window:before:load', (win) => {
   Object.defineProperty(win, 'self', {
     get: () => {
       return window.top
     }
   })
-})*/
+})
 
 //`${Cypress.config('screenshotsFolder')}/${ Cypress.spec.name}/${runnable.parent.title} -- ${test.title} (failed).png`;
 //'${Cypress.config('screenshotsFolder')}' by 'assets' only
