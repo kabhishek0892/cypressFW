@@ -8,6 +8,7 @@
     "mochawesome-merge": "^4.2.0"
   },
   "scripts": {
+    "verify": "npm install",
     "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareports",
     "pretest": "npm run clean:reports",
     "scripts": "cypress run --spec cypress/integration/Q2T-UI-Tests/Login/LoginPageTest.spec.js --browser=chrome",
