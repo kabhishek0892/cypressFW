@@ -18,6 +18,10 @@ class LoginPage {
     clicksendOTPBtn() {
         return cy.get('[type="button"]').contains('OTP').should('be.enabled').click()
     }
+
+    clickVerifyOTPBtn(){
+        return cy.get('[type="button"]').contains('Verify OTP').should('be.enabled').click() 
+    }
     getEmailPwdError() {
         return cy.get('.errorText').should('have.text', CONSTANTS.INCORRECT_PWD_MSG);
     }
@@ -27,6 +31,9 @@ class LoginPage {
     }
     clickOnNextButton() {
         return cy.get('[type="button"]').contains('Next').should('be.enabled').click()
+    }
+    clickOnSetPasswordButton() {
+        return cy.get('[type="button"]').contains('SET PASSWORD').should('be.enabled').click()
     }
 
     clickForgetPassword() {
@@ -50,6 +57,30 @@ class LoginPage {
         cy.get('.verifyDesc').should('have.text', CONSTANTS.OTP_MSG)
         cy.get('[type="button"]').contains('OTP').should('be.disabled')
         return this
+    }
+
+    verifySetNewPasswordScreen(condition){
+        cy.get('.popupContent>h2').should('have.text', 'Set Password')
+        cy.get(".setPwdDesc").should('have.text', "Enter a new password for " + Cypress.env('email'))
+        cy.get('label[for="newPasswordInputField"]').should('exist').contains('New Password')
+        cy.get('label[for="confirmPasswordInputField"]').should('exist').contains('Confirm Password')
+        cy.get('#newPasswordInputField').type("Test@123")
+        if(condition=="pwdmismatch")
+        {
+            cy.get('#confirmPasswordInputField').type("Test@1234") 
+            this.clickOnSetPasswordButton()
+            cy.get('p.errorText').should('be.visible').and('have.text',"Passwords didn’t match!")
+        }
+        if(condition=="clearPassword")
+        {
+            cy.get('#confirmPasswordInputField').type("Test@1234") 
+            this.clickOnSetPasswordButton()
+            cy.get('p.errorText').should('be.visible').and('have.text',"Passwords didn’t match!")
+            cy.get('#confirmPasswordInputField').clear()
+            cy.get('.errorText').should('not.be.visible')
+            cy.get('#newPasswordInputField').clear()
+            cy.get('.errorText').should('not.be.visible')
+        }
     }
 
     verifyButton(buttonName) {
@@ -89,6 +120,15 @@ class LoginPage {
             default:
                 cy.log("Invalid button value")
         }
+
+    }
+
+    enterOTP(){
+        cy.get('.popupContent>h2').should('have.text', 'Verify OTP')
+        cy.get('.otpInputWrapper>input').eq(0).type(1)
+        cy.get('.otpInputWrapper>input').eq(1).type(2)
+        cy.get('.otpInputWrapper>input').eq(2).type(3)
+        cy.get('.otpInputWrapper>input').eq(3).type(4)
 
     }
 }

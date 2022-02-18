@@ -1,5 +1,5 @@
 {
-    "baseUrl" :"http://partner.quest2travel.org:8006",
+    "baseUrl" :"http://partner.quest2travel.org:8008",
     "experimentalSourceRewriting": false,
     "clientRoute": "/",
       "chromeWebSecurity":false,

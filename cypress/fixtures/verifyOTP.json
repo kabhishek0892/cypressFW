@@ -1,0 +1,33 @@
+{
+    "data": {
+        "checkSum": "70VB8ACDY8I9",
+        "passwordValidationModel": [
+            {
+                "check": ".{6,}",
+                "message": "Minimum length 6"
+            },
+            {
+                "check": "^.{1,15}$",
+                "message": "Maximum length 15"
+            },
+            {
+                "check": "(.*[A-Za-z]){1,}",
+                "message": "1 or more Characters"
+            },
+            {
+                "check": "(.*[\\d]){1,}",
+                "message": "1 or more Numeric Characters"
+            },
+            {
+                "check": "(.*[@#$%^&*]){1,}",
+                "message": "1 or more Special Characters"
+            },
+            {
+                "check": "(.*[A-Z]){1,}",
+                "message": "1 or more Capital Letters"
+            }
+        ]
+    },
+    "errorDetails": [],
+    "status": "Success"
+}

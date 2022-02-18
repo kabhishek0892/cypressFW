@@ -21,7 +21,7 @@ export const CONSTANTS = {
     MY_PROFILE : 'My Profile',
     CONFIRM : 'Confirm',
     INCORRECT_PWD_MSG :'Incorrect password or the user Id provided is wrong.',
-    LOGIN_MSG :'Login to your Company Account',
+    LOGIN_MSG :'Login to Your Company Account',
     ENTER_LOGIN_ID: 'Login ID / Email Address',
     LOGIN_PLCAEHOLDER : 'Enter your login id or email address',
     OTP_MSG :'One Time Password (OTP) has been sent to your registered email address and mobile number.',

@@ -1,6 +1,5 @@
 /// <reference types="Cypress" />
 import LoginPage from './LoginPage'
-import { resetPwdApi } from '../Utils/apiUtils'
 import { RandomFn } from '../Utils/commonUtils'
 
 describe('Login Page Tests', function () {
@@ -16,7 +15,7 @@ describe('Login Page Tests', function () {
     })
     const loginPage = new LoginPage()
 
-    it.only('Login using email ID', () => {
+    it('Login using email ID', () => {
         loginPage.verifyLoginScreen()
         loginPage.fillEmail(this.creds.email)
         loginPage.clickOnNextButton()
@@ -64,6 +63,7 @@ describe('Login Page Tests', function () {
         loginPage.fillEmail(this.creds.email)
         loginPage.clicksendOTPBtn()
         loginPage.verifyOTPScreen()
+
     })
 
     it('Expired Password Test using mock', () => {
@@ -78,6 +78,31 @@ describe('Login Page Tests', function () {
         loginPage.clickForgetPassword()
         loginPage.clicksendOTPBtn()
 
+    })
+    it('Verify Set new password Screen in case of Password mismatch', () => {
+        loginPage.fillEmail(this.creds.email)
+        loginPage.clickOnNextButton()
+        loginPage.clickForgetPassword()
+        loginPage.fillEmail(this.creds.email)
+        cy.intercept('POST', '/login/sendOtp', { fixture:'sentOTP.json'})
+        loginPage.clicksendOTPBtn()
+        loginPage.enterOTP()
+        cy.intercept('POST', '/login/verifyOtp', { fixture:'verifyOTP.json'})
+        loginPage.clickVerifyOTPBtn()
+        loginPage.verifySetNewPasswordScreen("pwdmismatch")
+    })
+
+    it('Verify No error message is visible in case user clears password', () => {
+        loginPage.fillEmail(this.creds.email)
+        loginPage.clickOnNextButton()
+        loginPage.clickForgetPassword()
+        loginPage.fillEmail(this.creds.email)
+        cy.intercept('POST', '/login/sendOtp', { fixture:'sentOTP.json'})
+        loginPage.clicksendOTPBtn()
+        loginPage.enterOTP()
+        cy.intercept('POST', '/login/verifyOtp', { fixture:'verifyOTP.json'})
+        loginPage.clickVerifyOTPBtn()
+        loginPage.verifySetNewPasswordScreen("clearPassword")
     })
 
 })

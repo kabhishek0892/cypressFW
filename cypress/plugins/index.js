@@ -21,7 +21,7 @@ module.exports = (on, config) => {
   // `config` is the resolved Cypress config
 }
 
-const path = require('path');
+/*const path = require('path');
 module.exports = (on, config) => {
   on('before:browser:launch', (browser = {}, args) => {
     console.log(config, browser, args);
@@ -30,4 +30,4 @@ module.exports = (on, config) => {
     }
     return args;
   });
-};
+}; */
