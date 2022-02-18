@@ -35,4 +35,5 @@ export const CONSTANTS = {
     TRIP_REQUEST : "Trip Requests",
     FOR_YOU_TO_APPROVE : "FOR YOU TO APPROVE",
     RAISED_BY_YOU : "RAISED BY YOU",
+    PASSWORDMISMATCH : "Passwords didn’t match!"
     };

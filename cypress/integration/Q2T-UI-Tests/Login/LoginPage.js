@@ -69,13 +69,13 @@ class LoginPage {
         {
             cy.get('#confirmPasswordInputField').type("Test@1234") 
             this.clickOnSetPasswordButton()
-            cy.get('p.errorText').should('be.visible').and('have.text',"Passwords didn’t match!")
+            cy.get('p.errorText').should('be.visible').and('have.text',CONSTANTS.PASSWORDMISMATCH)
         }
         if(condition=="clearPassword")
         {
             cy.get('#confirmPasswordInputField').type("Test@1234") 
             this.clickOnSetPasswordButton()
-            cy.get('p.errorText').should('be.visible').and('have.text',"Passwords didn’t match!")
+            cy.get('p.errorText').should('be.visible').and('have.text',CONSTANTS.PASSWORDMISMATCH)
             cy.get('#confirmPasswordInputField').clear()
             cy.get('.errorText').should('not.be.visible')
             cy.get('#newPasswordInputField').clear()
