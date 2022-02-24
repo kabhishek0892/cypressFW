@@ -1,0 +1,24 @@
+version: '3.3'
+services:
+  corp-q2t-test-automation-ui:
+    image: "524881529748.dkr.ecr.ap-south-1.amazonaws.com/corp-q2t-test-automation-ui:${TAG}"
+    container_name: corp-q2t-test-automation-ui
+    environment:
+      - env=prod
+    healthcheck:
+      test: ["CMD-SHELL", "lsof -i :8080 || exit 1"]
+      ## test: ["CMD", "curl", "-f", "http://10.66.89.82:8181/wiremock/setServiceName/mappings_pay_gabbar/isHealthCheck=true"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    # volumes:
+    #  - /opt/logs/wiremock/:/opt/logs/
+    ports:
+     - "8080:80"
+    command: >
+      bash -c "mkdir -p /logs/q2t-automation && /usr/bin/supervisord -n -c /etc/supervisord.d/prod.conf"
+    networks:
+      - external
+    networks:
+      external:
+        name: corp-q2t-test-automation-ui
