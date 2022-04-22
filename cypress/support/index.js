@@ -27,7 +27,7 @@ Cypress.on('test:after:run', (test, runnable) => {
   }
 });
 
-
+/*
 Cypress.on('window:before:load', (win) => {
   Object.defineProperty(win, 'self', {
     get: () => {
@@ -35,7 +35,7 @@ Cypress.on('window:before:load', (win) => {
     }
   })
 })
-
+*/
 //`${Cypress.config('screenshotsFolder')}/${ Cypress.spec.name}/${runnable.parent.title} -- ${test.title} (failed).png`;
 //'${Cypress.config('screenshotsFolder')}' by 'assets' only
 Cypress.on('uncaught:exception', (err, runnable) => {
@@ -43,3 +43,16 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   // failing the test
   return false
 })
+module.exports = (on, config) => {
+  on('before:browser:launch', (browser = {}, launchOptions) => {
+    if (browser.family === 'chromium' && browser.name !== 'electron') {
+      launchOptions.args.push('--auto-open-devtools-for-tabs');
+    } else if (browser.family === 'firefox') {
+      launchOptions.args.push('-devtools');
+    } else if (browser.name === 'electron') {
+      launchOptions.preferences.devTools = true;
+    }
+
+    return launchOptions;
+  });
+};

@@ -29,8 +29,8 @@ class LoginPage {
     clikcOnClearFieldIcon() {
         return cy.get('.clearfieldIcon').click()
     }
-    clickOnNextButton() {
-        return cy.get('[type="button"]').contains('Next').should('be.enabled').click()
+    clickOnContinueButton() {
+        return cy.get('[type="button"]').contains('CONTINUE').should('be.enabled').click()
     }
     clickOnSetPasswordButton() {
         return cy.get('[type="button"]').contains('SET PASSWORD').should('be.enabled').click()
@@ -77,9 +77,9 @@ class LoginPage {
             this.clickOnSetPasswordButton()
             cy.get('p.errorText').should('be.visible').and('have.text',CONSTANTS.PASSWORDMISMATCH)
             cy.get('#confirmPasswordInputField').clear()
-            cy.get('.errorText').should('not.be.visible')
+            cy.get('.errorText').should('not.exist')
             cy.get('#newPasswordInputField').clear()
-            cy.get('.errorText').should('not.be.visible')
+            cy.get('p.errorText').should('not.exist')
         }
     }
 
@@ -129,6 +129,14 @@ class LoginPage {
         cy.get('.otpInputWrapper>input').eq(1).type(2)
         cy.get('.otpInputWrapper>input').eq(2).type(3)
         cy.get('.otpInputWrapper>input').eq(3).type(4)
+
+    }
+
+    login(){
+        this.fillEmail("Abhishek.kumar@go-mmt.com")
+        this.fillPassword("Test@123")
+        this.clickOnNextButton()
+        this. clickOnContinueButton()
 
     }
 }

@@ -1,9 +1,7 @@
 {
-    "baseUrl" :"http://partner.quest2travel.org:8008",
-    "experimentalSourceRewriting": false,
+    "baseUrl" :"http://partner.quest2travel.org:8007",
+    "pageLoadTimeout": 10000,
     "clientRoute": "/",
-      "chromeWebSecurity":false,
-      "modifyObstructiveCode":true,
       "screenshotsFolder": "cypress/reports/mochareports/assets",
       "projectId":"1234",
       "reporter": "mochawesome",
@@ -21,7 +19,7 @@
         "username": "Abhishek",
         "password": "Test@123",
         "email":"Abhishek.kumar3@go-mmt.com",
-        "APIURL": "http://partnerapi.quest2travel.org:8003"
+        "APIURL": "http://partnerapi.quest2travel.org:8005"
       }
     }
     

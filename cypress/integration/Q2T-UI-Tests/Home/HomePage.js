@@ -23,12 +23,12 @@ class HomePage {
         cy.get('div[class="bookTravelPop"] h2').should('have.text', CONSTANTS.PERSONAL_TAVEL)
 
         cy.get('p[class="lobTitle"]').should(($lis) => {
-            expect($lis, '5 items').to.have.length(5)
+            expect($lis, '2 items').to.have.length(2)
             expect($lis.eq(0), 'first lob').to.contain(CONSTANTS.FLIGHT)
             expect($lis.eq(1), 'second lob').to.contain(CONSTANTS.HOTEL)
-            expect($lis.eq(2), 'third lob').to.contain(CONSTANTS.GUEST_HOUSE)
+           /* expect($lis.eq(2), 'third lob').to.contain(CONSTANTS.GUEST_HOUSE)
             expect($lis.eq(3), 'fourth lob').to.contain(CONSTANTS.HOLIDAY_HOME)
-            expect($lis.eq(4), 'fifth lob').to.contain(CONSTANTS.CORPORATE_LEISURE)
+            expect($lis.eq(4), 'fifth lob').to.contain(CONSTANTS.CORPORATE_LEISURE) */
             //try to use overloaded methods
             //to implement logic 
         })
@@ -38,6 +38,7 @@ class HomePage {
         cy.log('Popup closed')
     }
     //to add click events once domain is shifted to MMT
+    //verifies only when user has incomplete request - refactoring required in new UI
     verifyQuickLinks() {
 
         cy.get('div.cpltItnryWrap').then($incmpltreq => {
@@ -46,7 +47,7 @@ class HomePage {
                     expect($ls, 'Three Links').to.have.length(3)
                     expect($ls.eq(0), 'My Requests').to.contain(CONSTANTS.MY_REQUEST)
                     expect($ls.eq(1), 'My Trips').to.contain(CONSTANTS.MY_TRIP)
-                    expect($ls.eq(2), 'My Expenses').to.contain(CONSTANTS.MY_APPROVAL)
+                    expect($ls.eq(2), 'My Expenses').to.contain(CONSTANTS.MY_EXPENSES)
                 })
             }
             else{
@@ -54,7 +55,7 @@ class HomePage {
                     expect($ls, 'Three Links').to.have.length(3)
                     expect($ls.eq(0), 'My Requests').to.contain(CONSTANTS.MY_REQUEST)
                     expect($ls.eq(1), 'My Trips').to.contain(CONSTANTS.MY_TRIP)
-                    expect($ls.eq(2), 'My Expenses').to.contain(CONSTANTS.MY_APPROVAL)
+                    expect($ls.eq(2), 'My Expenses').to.contain(CONSTANTS.MY_EXPENSES)
                 })
             }
         })
@@ -76,6 +77,11 @@ class HomePage {
         cy.get('.contactCard>p.contactByTitle').eq(1).should('contain.text',CONSTANTS.WRITE_US)
         cy.get('.contactCard').eq(1).find('h2').should('contain.text',CONSTANTS.ESCALATION_MATRIX)
         cy.get('.selectWrap').click()
+        cy.get('#SelectTimeline >li').each((element,index,list)=>{
+        expect(Cypress.$(element)).to.contain.text('Level')
+        expect(index).to.be.greaterThan(-1)
+        expect(list).to.have.length(5)
+        })
     }
 
     verifyHamburgerMenu() {
@@ -88,7 +94,8 @@ class HomePage {
 
     logout() {
         cy.log('Add logout functionality')
-        cy.get('img[alt="logout"]').click()
+        cy.get('img').click()
+        cy.get('.pushBottom > .makeFlex').click()
     }
 
     rejectRequest(){
@@ -104,9 +111,9 @@ class HomePage {
     
     verifyCustomerSupportSection(){
         verifyHamburgerMenu()
-        
-
     }
+
+    
     //For optimisation
    /* getLabels(labelName) {
         const labels = { Email: 1, Company: 2, Codes: 3 }

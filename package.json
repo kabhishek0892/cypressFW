@@ -2,7 +2,7 @@
   "description": "UI Automation",
   "main": "index.js",
   "devDependencies": {
-    "cypress": "^8.7.0",
+    "cypress": "^7.7.0",
     "cypress-xpath": "^1.6.2",
     "mochawesome": "^6.3.0",
     "mochawesome-merge": "^4.2.0"

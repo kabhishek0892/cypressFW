@@ -29,7 +29,7 @@
                 "serviceDetails": {
                     "cta": [
                         {
-                            "text": "VIEW DETAILS",
+                            "text": "VIEW BOOKING",
                             "type": "view"
                         }
                     ],
@@ -90,7 +90,7 @@
                 "serviceDetails": {
                     "cta": [
                         {
-                            "text": "VIEW DETAILS",
+                            "text": "VIEW BOOKING",
                             "type": "view"
                         }
                     ],
@@ -126,7 +126,7 @@
                 "serviceDetails": {
                     "cta": [
                         {
-                            "text": "VIEW DETAILS",
+                            "text": "VIEW BOOKING",
                             "type": "view"
                         },
                         {

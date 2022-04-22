@@ -15,13 +15,14 @@ export const CONSTANTS = {
     MY_REQUEST:'My Requests',
     MY_TRIP:'My Trips',
     MY_APPROVAL:'My Approvals',
+    MY_EXPENSES:'My Expenses',
     CALL_US :'Call us on',
     WRITE_US: 'Write to us',
     ESCALATION_MATRIX : 'Escalation Matrix',
     MY_PROFILE : 'My Profile',
     CONFIRM : 'Confirm',
     INCORRECT_PWD_MSG :'Incorrect password or the user Id provided is wrong.',
-    LOGIN_MSG :'Login to Your Company Account',
+    LOGIN_MSG :'Login to your Company Account',
     ENTER_LOGIN_ID: 'Login ID / Email Address',
     LOGIN_PLCAEHOLDER : 'Enter your login id or email address',
     OTP_MSG :'One Time Password (OTP) has been sent to your registered email address and mobile number.',
@@ -35,5 +36,6 @@ export const CONSTANTS = {
     TRIP_REQUEST : "Trip Requests",
     FOR_YOU_TO_APPROVE : "FOR YOU TO APPROVE",
     RAISED_BY_YOU : "RAISED BY YOU",
-    PASSWORDMISMATCH : "Passwords didn’t match!"
+    PASSWORDMISMATCH : "Password didn’t match!",
+    NO_REQ_TO_APPROVE : "You have no requests to approve"
     };

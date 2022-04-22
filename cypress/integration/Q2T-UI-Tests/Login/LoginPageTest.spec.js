@@ -18,31 +18,30 @@ describe('Login Page Tests', function () {
     it('Login using email ID', () => {
         loginPage.verifyLoginScreen()
         loginPage.fillEmail(this.creds.email)
-        loginPage.clickOnNextButton()
+        loginPage.clickOnContinueButton()
         //resetPwdApi()
         //loginPage.verifyPwdLScreen()
         loginPage.fillPassword(this.creds.password)
         loginPage.clickloginBtn()
     })
 
-    it('Verify CTA Buttons i.e Next , Login and Reset Pwd', () => {
-        loginPage.verifyButtonEnableDisableBtn('Next');
+    it('Verify CTA Buttons i.e Continue , Login and Reset Pwd', () => {
+        loginPage.verifyButtonEnableDisableBtn('CONTINUE');
         loginPage.fillEmail(this.creds.loginId)
-        loginPage.clickOnNextButton()
+        loginPage.clickOnContinueButton()
         loginPage.verifyButtonEnableDisableBtn('LOGIN');
     })
 
     it('Login using loginID', () => {
         loginPage.fillEmail(this.creds.loginId)
-        loginPage.clickOnNextButton()
-        //resetPwdApi()
+        loginPage.clickOnContinueButton()
         loginPage.fillPassword(this.creds.password)
         loginPage.clickloginBtn()
     })
 
     it('Login with invalid username', () => {
         loginPage.fillEmail(RandomFn('email'))
-        loginPage.clickOnNextButton()
+        loginPage.clickOnContinueButton()
         loginPage.fillPassword(RandomFn('password'))
         loginPage.clickloginBtn()
         loginPage.getEmailPwdError()
@@ -50,7 +49,7 @@ describe('Login Page Tests', function () {
 
     it('Login with invalid password', () => {
         loginPage.fillEmail(this.creds.email)
-        loginPage.clickOnNextButton()
+        loginPage.clickOnContinueButton()
         loginPage.fillPassword(RandomFn())
         loginPage.clickloginBtn()
         loginPage.getEmailPwdError()
@@ -58,7 +57,7 @@ describe('Login Page Tests', function () {
 
     it('Reset password', () => {
         loginPage.fillEmail(this.creds.email)
-        loginPage.clickOnNextButton()
+        loginPage.clickOnContinueButton()
         loginPage.clickForgetPassword()
         loginPage.fillEmail(this.creds.email)
         loginPage.clicksendOTPBtn()
@@ -66,13 +65,13 @@ describe('Login Page Tests', function () {
 
     })
 
-    it('Expired Password Test using mock', () => {
+    it.skip('Expired Password Test using mock', () => {
         loginPage.verifyLoginScreen()
         loginPage.fillEmail(this.creds.email)
-        loginPage.clickOnNextButton()
+        loginPage.clickOnContinueButton()
         loginPage.verifyPwdLScreen()
         loginPage.fillPassword(this.creds.password)
-        cy.intercept('POST', '/login', { fixture: 'expired-pwd-mock.json' }).as('login')
+        cy.intercept('POST', '/login', { fixture: 'expired-pwd-mock.json' }).as('login').log()
         loginPage.clickloginBtn()
         loginPage.verifyExpiredPasswordMsg().should('contain.text', this.msg.password_expired)
         loginPage.clickForgetPassword()
@@ -81,7 +80,7 @@ describe('Login Page Tests', function () {
     })
     it('Verify Set new password Screen in case of Password mismatch', () => {
         loginPage.fillEmail(this.creds.email)
-        loginPage.clickOnNextButton()
+        loginPage.clickOnContinueButton()
         loginPage.clickForgetPassword()
         loginPage.fillEmail(this.creds.email)
         cy.intercept('POST', '/login/sendOtp', { fixture:'sentOTP.json'})
@@ -94,7 +93,7 @@ describe('Login Page Tests', function () {
 
     it('Verify No error message is visible in case user clears password', () => {
         loginPage.fillEmail(this.creds.email)
-        loginPage.clickOnNextButton()
+        loginPage.clickOnContinueButton()
         loginPage.clickForgetPassword()
         loginPage.fillEmail(this.creds.email)
         cy.intercept('POST', '/login/sendOtp', { fixture:'sentOTP.json'})

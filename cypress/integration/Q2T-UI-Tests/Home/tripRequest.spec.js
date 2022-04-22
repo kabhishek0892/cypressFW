@@ -25,9 +25,6 @@ describe('My Trips Requests Test suite', function () {
     beforeEach(() => {
         loginWithEmail(Cypress.env('email'), Cypress.env('password'))
     })
-    afterEach(() => {
-        cy.screenshot()
-    })
 
     it('Requestor and Approver view', () => {
         cy.intercept("GET", "/home/tripRequests", { fixture: "trip-requests-both-mock.json" })
@@ -114,19 +111,19 @@ describe('My Trips Requests Test suite', function () {
     it('500 Error', () => {
         cy.intercept("GET", "/home/tripRequests", { statusCode: 500 })
         cy.visit('/home/')
-        cy.get('.tripReqHeading > h2').should('not.be.visible').and('not.exist')
+        cy.get('.tripReqHeading > h2').should('not.exist')
     })
 
     it('404 Error', () => {
         cy.intercept("GET", "/home/tripRequests", { statusCode: 404 })
         cy.visit('/home/')
-        cy.get('.tripReqHeading > h2').should('not.be.visible').and('not.exist')
+        cy.get('.tripReqHeading > h2').should('not.exist')
     })
 
     it('302 Error', () => {
         cy.intercept("GET", "/home/tripRequests", { statusCode: 302 })
         cy.visit('/home/')
-        cy.get('.tripReqHeading > h2').should('not.be.visible').and('not.exist')
+        cy.get('.tripReqHeading > h2').should('not.exist')
 
 
     })

@@ -14,16 +14,15 @@ describe('Incomplete Request Test suite', function () {
         loginWithEmail(Cypress.env('email'), Cypress.env('password'))
     })
 
-    afterEach(()=>{
+    /*afterEach(()=>{
         logout()
-     }) 
+     }) */
 
      //after block to delete that extra payload created 
 
     it('incompleterequest with domestic travel with rail and flight', () => {
         cy.intercept("GET", "/home/inCompleteRequest", { fixture: "incomplete-req-flight-train.json" }).as('incompleteReq')
         cy.visit('/home/')
-        cy.wait('@incompleteReq')
         cy.fixture('incomplete-req-flight-train').then(req => {
             cy.get('p.destination').eq(0).should('contain.text', req.data.incompleteRequest.services[0].title)
             cy.get('p.destination').eq('1').should('contain.text', req.data.incompleteRequest.services[1].title)
@@ -31,7 +30,7 @@ describe('Incomplete Request Test suite', function () {
         })
     })
 
-    it('incomplete request with all LOBs', () => {
+   it('incomplete request with all LOBs', () => {
         cy.readFile("cypress/fixtures/incomplete-req-flight-train.json", (err, x) => {
             if (err) {
                 return console.error(err);
@@ -41,23 +40,25 @@ describe('Incomplete Request Test suite', function () {
             cy.writeFile("cypress/fixtures/incomplete-req-allLOBS.json", JSON.stringify(x))
         })
 
-        cy.intercept("GET", "/home/inCompleteRequest", { fixture: "incomplete-req-allLOBS.json" })
+        cy.intercept("GET", "/home/inCompleteRequest", { fixture: "incomplete-req-allLOBS.json" }).as('incompleteReq')
         cy.visit('/home/')
+        cy.wait('@incompleteReq')
         cy.fixture('incomplete-req-allLOBS.json').then(req => {
             cy.get('p.destination').eq(0).should('contain.text', req.data.incompleteRequest.services[0].title)
             cy.get('p.destination').eq('1').should('contain.text', req.data.incompleteRequest.services[1].title)
             cy.get('p.destination').eq('2').should('contain.text', req.data.incompleteRequest.totalServices)
         })
-    })
+    }) 
 
 
     it('incomplete request with text message  ', () => {
         cy.intercept("GET", "/home/inCompleteRequest", { fixture: "incomplete-req-text-only.json" })
-        cy.visit('/home/')
+        cy.visit('/home/').debug()
         cy.fixture('incomplete-req-text-only.json').then(req => {
             cy.get('p.tripIdText').should('contain.text', req.data.incompleteRequest.inCompleteReqText)
         })
     })
+    
     it('incomplete request with empty response  ', () => {
         cy.intercept("GET", "/home/inCompleteRequest", { fixture: "noresultfound.json" })
         cy.visit('/home/')
@@ -93,7 +94,7 @@ describe('Incomplete Request Test suite', function () {
         cy.get('a[class="cpltItnryWrap"]').should('not.exist')
         cy.get('.startTripWrap > .card').should('be.visible')
 
-    })
+    }) 
 })
 
     //cy.log(@x)

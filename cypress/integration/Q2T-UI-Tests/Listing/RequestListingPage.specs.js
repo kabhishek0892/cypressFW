@@ -27,15 +27,21 @@ describe ('Request Listing Page Requestor View',()=>{
         cy.viewport('macbook-16')
     })
     beforeEach(() => {
-        loginWithId('LIPLtest_emp','test@123')
+        loginWithId(Cypress.env('username'), Cypress.env('password'))
         cy.visit('/requests/')
     })
-    afterEach(() => {
-        cy.screenshot()
-    })
 
-    it('Verify request heading',()=>{
+    it('Verify My Requests heading and both tabs - approver view',()=>{
         cy.get('.tripReqWrap > h2').should('be.visible').and('have.text', CONSTANTS.MY_REQUEST)
+        cy.get('.noReqWrap>p').should('have.text',CONSTANTS.NO_REQ_TO_APPROVE)
+        cy.get('.tripReqTab>li').should(($ls) => {
+            expect($ls, 'Two tabs').to.have.length(2)
+            expect($ls.eq(0)).to.have.text(CONSTANTS.FOR_YOU_TO_APPROVE)
+            expect($ls.eq(0)).to.have.class('active')
+            expect($ls.eq(1)).to.have.text(CONSTANTS.RAISED_BY_YOU)
+            // expect($ls.eq(1), 'My Trips').to.contain(CONSTANTS.MY_TRIP)
+        })
+
     })
 
 })

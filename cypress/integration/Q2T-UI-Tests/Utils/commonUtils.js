@@ -55,7 +55,7 @@ export function rejectRequest(request_id) {
     cy.get('.reqRejectPopUp').should('be.visible')
     cy.get('.reqRejectPopUp > h2').should('have.text', CONSTANTS.REJECT_REQUEST)
     cy.get('label').should('have.text', CONSTANTS.REASON_REJECTION)
-    cy.get('#userInputField').type('test')
+    cy.get('#userInputField').type('automated message')
     cy.get('.button').should('have.text', CONSTANTS.CNF_REJECT_REQUEST).click()
     cy.get("[data-testid=\"" + request_id + "\"] > .reqRejAppBtns > .reqSelectBtn").should('not.exist')
 }
