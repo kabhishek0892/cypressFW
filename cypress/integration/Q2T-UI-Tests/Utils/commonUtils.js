@@ -64,3 +64,50 @@ export function sendReminder(request_id) {
     cy.get("[data-testid=\"" + request_id +"Link"+ "\"]").click()
 }
 
+export function verifySearchResults(listlocator,searchText) {
+    cy.get(listlocator).each(($el) => {
+        expect($el.text()).to.contain(searchText)
+        assert.isNotNull($el.text(), 'is not null')
+    })
+}
+
+// Use of Lodash to get property "innerText" from every item in the array
+
+export function verifyLobListAndHierarchy(listlocator,region) {
+    if(region=='domestic')
+    {
+        cy.get(listlocator)
+        .should('have.length', 4)
+        .then(($els) => {
+          // jQuery => Array => get "innerText" from each
+          return Cypress._.map(Cypress.$.makeArray($els), 'innerText')
+        })
+        .should('deep.equal', ['Flights', 'Accommodation', 'Trains','Buses'])
+    }
+
+    else{
+        cy.get(listlocator)
+        .should('have.length', 4)
+        .then(($els) => {
+          // jQuery => Array => get "innerText" from each
+          return Cypress._.map(Cypress.$.makeArray($els), 'innerText')
+        })
+        .should('deep.equal', ['Flights', 'Forex', 'Insurance','Visa'])
+    }
+    
+  }
+
+  export function addLOB(lob){
+  cy.get('.lobInfo').each(($ele) => {
+    if ($ele.find('.lobName').contains(lob)) {
+        cy.get('.lobInfo>.lobName').siblings('.linkText').click()
+    }
+})
+  }
+
+  export function addParticularLOB(lob){
+    cy.get('.lobInfo>.lobName:contains('+lob+')').each(($row) => {
+        cy.wrap($row).siblings('.linkText').click()
+      })
+      
+  }

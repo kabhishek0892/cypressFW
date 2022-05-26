@@ -1,5 +1,5 @@
 {
-    "baseUrl" :"http://partner.quest2travel.org:8007",
+    "baseUrl" :"http://partner.quest2travel.org:8004",
     "pageLoadTimeout": 10000,
     "clientRoute": "/",
       "screenshotsFolder": "cypress/reports/mochareports/assets",
