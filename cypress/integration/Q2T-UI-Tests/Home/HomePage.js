@@ -1,9 +1,10 @@
-import {CONSTANTS} from "../Utils/constants"
+import { CONSTANTS } from "../Utils/constants"
 
 class HomePage {
 
-    verifyWelcomeMessage() { 
-        cy.get('.startTripWrap > h3').should('contain.text', CONSTANTS.START_TRIP) }
+    verifyWelcomeMessage() {
+        cy.get('.startTripWrap > h3').should('contain.text', CONSTANTS.START_TRIP)
+    }
 
     verifyRequestItinerary(expctMsg) {
         let actualMsg = '';
@@ -16,19 +17,19 @@ class HomePage {
         cy.log(actualMsg + "Outside the loop") //to check why actual message is not coming in actualMsg
     }
     clickRequestItinerary() {
-        cy.get('.startTripWrap>div>p:nth-child(2)>span').click({force: true})
+        cy.get('.startTripWrap>div>p:nth-child(2)>span').click({ force: true })
     }
     verifyBookPersonalTravelandLobs() {
-        cy.get('a[class="bookTravel"]').click({force: true})
+        cy.get('a[class="bookTravel"]').click({ force: true })
         cy.get('div[class="bookTravelPop"] h2').should('have.text', CONSTANTS.PERSONAL_TAVEL)
 
         cy.get('p[class="lobTitle"]').should(($lis) => {
             expect($lis, '2 items').to.have.length(2)
             expect($lis.eq(0), 'first lob').to.contain(CONSTANTS.FLIGHT)
             expect($lis.eq(1), 'second lob').to.contain(CONSTANTS.HOTEL)
-           /* expect($lis.eq(2), 'third lob').to.contain(CONSTANTS.GUEST_HOUSE)
-            expect($lis.eq(3), 'fourth lob').to.contain(CONSTANTS.HOLIDAY_HOME)
-            expect($lis.eq(4), 'fifth lob').to.contain(CONSTANTS.CORPORATE_LEISURE) */
+            /* expect($lis.eq(2), 'third lob').to.contain(CONSTANTS.GUEST_HOUSE)
+             expect($lis.eq(3), 'fourth lob').to.contain(CONSTANTS.HOLIDAY_HOME)
+             expect($lis.eq(4), 'fifth lob').to.contain(CONSTANTS.CORPORATE_LEISURE) */
             //try to use overloaded methods
             //to implement logic 
         })
@@ -40,47 +41,37 @@ class HomePage {
     //to add click events once domain is shifted to MMT
     //verifies only when user has incomplete request - refactoring required in new UI
     verifyQuickLinks() {
-
-        cy.get('div.cpltItnryWrap').then($incmpltreq => {
-            if ($incmpltreq.is(':visible')){
+        cy.get('body').then((body) => {
+            if (body.find('div.cpltItnryWrap').length > 0) {
                 cy.get('.verticalquickLinksCards>div>p').should(($ls) => {
-                    expect($ls, 'Three Links').to.have.length(3)
+                    expect($ls, 'Two Links').to.have.length(2)
                     expect($ls.eq(0), 'My Requests').to.contain(CONSTANTS.MY_REQUEST)
                     expect($ls.eq(1), 'My Trips').to.contain(CONSTANTS.MY_TRIP)
-                    expect($ls.eq(2), 'My Expenses').to.contain(CONSTANTS.MY_EXPENSES)
                 })
             }
-            else{
+            else {
                 cy.get('.quickLinksCards>div>p').should(($ls) => {
-                    expect($ls, 'Three Links').to.have.length(3)
+                    expect($ls, 'Two Links').to.have.length(2)
                     expect($ls.eq(0), 'My Requests').to.contain(CONSTANTS.MY_REQUEST)
                     expect($ls.eq(1), 'My Trips').to.contain(CONSTANTS.MY_TRIP)
-                    expect($ls.eq(2), 'My Expenses').to.contain(CONSTANTS.MY_EXPENSES)
                 })
             }
         })
     }
-        //verticalquickLinksCards
-       /* cy.get('.quickLinksCards>div>p').should(($ls) => {
-            expect($ls, 'Three Links').to.have.length(3)
-            expect($ls.eq(0), 'My Requests').to.contain('My Requests')
-            expect($ls.eq(1), 'My Trips').to.contain('My Trips')
-            expect($ls.eq(2), 'My Expenses').to.contain('My Expenses')
-        })
-    }*/
+   
     //to add click events once domain is shifted to MMT
     verifySupportMenu() {
-        cy.get('.hamburger>div>p').eq('1').should('contain.text',CONSTANTS.CONTACT_US).click()
+        cy.get('.hamburger>div>p').eq('1').should('contain.text', CONSTANTS.CONTACT_US).click()
         cy.url().should('include', '/contactUs')
-        cy.get('.contactCard').eq(0).find('h2').should('contain.text',CONSTANTS.CONTACT_INFO)
-        cy.get('.contactCard>p.contactByTitle').eq(0).should('contain.text',CONSTANTS.CALL_US)
-        cy.get('.contactCard>p.contactByTitle').eq(1).should('contain.text',CONSTANTS.WRITE_US)
-        cy.get('.contactCard').eq(1).find('h2').should('contain.text',CONSTANTS.ESCALATION_MATRIX)
+        cy.get('.contactCard').eq(0).find('h2').should('contain.text', CONSTANTS.CONTACT_INFO)
+        cy.get('.contactCard>p.contactByTitle').eq(0).should('contain.text', CONSTANTS.CALL_US)
+        cy.get('.contactCard>p.contactByTitle').eq(1).should('contain.text', CONSTANTS.WRITE_US)
+        cy.get('.contactCard').eq(1).find('h2').should('contain.text', CONSTANTS.ESCALATION_MATRIX)
         cy.get('.selectWrap').click()
-        cy.get('#SelectTimeline >li').each((element,index,list)=>{
-        expect(Cypress.$(element)).to.contain.text('Level')
-        expect(index).to.be.greaterThan(-1)
-        expect(list).to.have.length(5)
+        cy.get('#SelectTimeline >li').each((element, index, list) => {
+            expect(Cypress.$(element)).to.contain.text('Level')
+            expect(index).to.be.greaterThan(-1)
+            expect(list).to.have.length(5)
         })
     }
 
@@ -90,45 +81,55 @@ class HomePage {
             // expect($ls, 'Hamburger Links').to.have.length(3)
             expect($ls.eq(0), 'Profile').to.contain(CONSTANTS.MY_PROFILE)
         })
+        cy.get('p[class="navTitle"]').should('have.text','Support')
+        cy.get('p.navLinks>a').should(($ls) => {
+            expect($ls.eq(0),'Escalation Matrix').to.contain(CONSTANTS.CONTACT_US_ESC_MATRIX)
+            expect($ls.eq(1),'Travel Guidelines').to.contain(CONSTANTS.TRAVEL_GUIDELINES)
+           /// expect($ls.eq(2),'User Travel Policy').to.contain(CONSTANTS.USER_TRVL_POLCIY)
+            expect($ls.eq(2),'User Mannual').to.contain(CONSTANTS.USER_MANNUAL)
+
+        })
+        cy.get('body').click(50, 50, { force: true })
     }
 
     logout() {
         cy.log('Add logout functionality')
-        cy.get('img').click()
+        cy.get('.userSection > img').click()
         cy.get('.pushBottom > .makeFlex').click()
     }
 
-    rejectRequest(){
-        if(cy.get('button.reqSelectBtn')){
-        cy.get('button.reqSelectBtn').eq(0).click()
-        cy.get('#userInputField').type('Not relevant now')
-        cy.get('button').should('contain.text',CONSTANTS.CONFIRM).click()}
+    rejectRequest() {
+        if (cy.get('button.reqSelectBtn')) {
+            cy.get('button.reqSelectBtn').eq(0).click()
+            cy.get('#userInputField').type('Not relevant now')
+            cy.get('button').should('contain.text', CONSTANTS.CONFIRM).click()
+        }
     }
-    approveRequest(){
-       cy.get('.userSection > img').click()
-       cy.get('button.reqApproveBtn')
-    }
-    
-    verifyCustomerSupportSection(){
-        verifyHamburgerMenu()
+    approveRequest() {
+        cy.get('.userSection > img').click()
+        cy.get('button.reqApproveBtn')
     }
 
-    
+    verifyCustomerSupportSection() {
+      
+    }
+
+
     //For optimisation
-   /* getLabels(labelName) {
-        const labels = { Email: 1, Company: 2, Codes: 3 }
-        return cy.get(`.pgn__form-group:nth-of-type(${labels[labelName]}) label`)
-      }
-      getFormField(fieldName) {
-        return cy.get(`[name="${fieldName}"]`)
-      }
-      getCouponCode(columnNumber) {
-        return cy.get(`.coupon-details-table td:nth-child(${columnNumber})`)
-      }
-      getLogoAltAttributes(logoContainer, attributeName, logoType = '/') {
-        // This function takes parent container name, logo type and attribute name
-        // as parameter and return attribute value
-        return cy.get(logoContainer).find(`a[href="${logoType}"]>img`).invoke('attr', attributeName)
-      } */
+    /* getLabels(labelName) {
+         const labels = { Email: 1, Company: 2, Codes: 3 }
+         return cy.get(`.pgn__form-group:nth-of-type(${labels[labelName]}) label`)
+       }
+       getFormField(fieldName) {
+         return cy.get(`[name="${fieldName}"]`)
+       }
+       getCouponCode(columnNumber) {
+         return cy.get(`.coupon-details-table td:nth-child(${columnNumber})`)
+       }
+       getLogoAltAttributes(logoContainer, attributeName, logoType = '/') {
+         // This function takes parent container name, logo type and attribute name
+         // as parameter and return attribute value
+         return cy.get(logoContainer).find(`a[href="${logoType}"]>img`).invoke('attr', attributeName)
+       } */
 }
 export default HomePage;

@@ -4,7 +4,7 @@ import {verifyFormattedText,verifyLobListAndHierarchy,addLOB,addParticularLOB} f
 
 describe('Add Services TestCases',()=>{
     before(() => {
-        cy.viewport('macbook-16')
+       // cy.viewport('macbook-16')
     })
     beforeEach(() => {
         loginWithId(Cypress.env('username'), Cypress.env('password'))

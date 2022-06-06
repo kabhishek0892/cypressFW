@@ -2,14 +2,11 @@ import HomePage from './HomePage'
 import { loginWithEmail } from '../Utils/apiUtils'
 import {CONSTANTS} from "../Utils/constants"
 
-describe('Home Page Tests with different types of views',function(){
+describe('Home Page Tests with different types of views for Single User',function(){
     const homePage = new HomePage();
     it('Verify Home Page with Expenses',()=>{
     loginWithEmail(Cypress.env('email'),Cypress.env('password'))
     cy.visit('/home/')
-    //cy.Login(Cypress.env('email'),Cypress.env('password'))
-    
-    cy.viewport('macbook-16')
     homePage.verifyWelcomeMessage()
     homePage.verifyRequestItinerary(CONSTANTS.HOMEPAGE_ITINERARY)
     homePage.verifyBookPersonalTravelandLobs()

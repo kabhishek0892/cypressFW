@@ -1,25 +1,25 @@
 {
-    "baseUrl" :"http://partner.quest2travel.org:8004",
+    "baseUrl" :"http://corporate.quest2travel.org",
     "pageLoadTimeout": 10000,
     "clientRoute": "/",
-      "screenshotsFolder": "cypress/reports/mochareports/assets",
       "projectId":"1234",
-      "reporter": "mochawesome",
+      "reporter": "cypress-mochawesome-reporter",
       "reporterOptions": {
-        "screenshotOnRunFailure": true,
-        "reportDir": "cypress/reports/mocha",
-        "reportFilename": "report",
-        "overwrite": false,
-        "html": true,
-        "json": true,
-        "charts": true
+        "reportDir": "cypress/report",
+        "charts": true,
+        "reportPageTitle" :"Q2T Automation Report",
+        "reportFilename": "[status]_[datetime]-[name]-report",
+        "timestamp": "longDate",
+        "overwrite":false,
+        "code":true,
+       "autoOpen"  :true
       },
       "video": false,
       "env": {
         "username": "Abhishek",
         "password": "Test@123",
         "email":"Abhishek.kumar3@go-mmt.com",
-        "APIURL": "http://partnerapi.quest2travel.org:8005"
+        "APIURL": "http://corporate-api.quest2travel.org"
       }
     }
     

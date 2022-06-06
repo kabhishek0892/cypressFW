@@ -2,7 +2,7 @@ import { loginWithEmail, loginWithId } from '../Utils/apiUtils'
 import { rejectRequest, approveRequest, sendReminder, verifyListisNotNull, verifyFormattedText } from '../Utils/commonUtils'
 import { CONSTANTS } from '../Utils/constants'
 
-describe('Only Requestor Test suite', () => {
+describe.skip('Only Requestor Test suite', () => {
     it('Requestor sends Reminder for pending request ', () => {
         loginWithId('q2ttsllemp', 'p@ssw0rd')
         cy.intercept("GET", "/home/tripRequests", { fixture: "trip-request-requestor-profile.json" })

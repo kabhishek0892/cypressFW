@@ -34,8 +34,16 @@ export const CONSTANTS = {
     REQUEST_SENT_TO :"Request sent to",
     TRIP_ID : "Trip ID #",
     TRIP_REQUEST : "Trip Requests",
-    FOR_YOU_TO_APPROVE : "FOR YOU TO APPROVE",
-    RAISED_BY_YOU : "RAISED BY YOU",
+    FOR_YOU_TO_APPROVE : "For you to Approve",
+    RAISED_BY_YOU : "Raised by you",
     PASSWORDMISMATCH : "Password didn’t match!",
-    NO_REQ_TO_APPROVE : "You have no requests to approve"
+    NO_REQ_TO_APPROVE : "You have no requests to approve",
+    CONTACT_US_ESC_MATRIX : "Contact us & Escalation Matrix",
+    TRAVEL_GUIDELINES : "Travel Guidelines",
+    USER_TRVL_POLCIY : "User Travel Policy",
+    USER_MANNUAL :"User Manual",
+    TOBE_APPROVED : "To be Approved",
+    APPROVED : "Approved",
+    OTHERS : "Others",
+    TRIP_DURATION :"Trip Duration"
     };

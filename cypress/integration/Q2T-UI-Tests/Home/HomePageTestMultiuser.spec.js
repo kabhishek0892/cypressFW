@@ -4,13 +4,12 @@ import HomePage from './HomePage'
 const userdata = require('/../Corp-Q2T-Test-Automation-UI/cypress/fixtures/users.json')
 
 userdata.forEach((credentials) => {
-    describe('Home Page Tests', function () {
+    describe('Home Page Tests with multiple users', function () {
         const homePage = new HomePage();
 
         beforeEach(() => {
             loginWithId(credentials.loginid, credentials.password)
             cy.visit('/home/')
-            cy.viewport('macbook-16')
         })
 
         it('Verify Home Page', () => {
@@ -20,8 +19,8 @@ userdata.forEach((credentials) => {
             homePage.clickonCloseIconinBookingPopup()
             homePage.verifyQuickLinks()
             homePage.verifyHamburgerMenu()
-           // homePage.verifySupportLinks()
-            //homePage.logout()
+            homePage.verifySupportMenu()
+           // homePage.logout()
 
         })
     })
