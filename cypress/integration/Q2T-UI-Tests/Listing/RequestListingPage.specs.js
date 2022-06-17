@@ -4,6 +4,7 @@ import { CONSTANTS } from '../Utils/constants'
 import testdata from '/Users/mmt9361/Desktop/Corp-Q2T-Test-Automation-UI/cypress/fixtures/users.json'
 const regex = new RegExp(/^(?=.*\bTraveller.*\b)(?=.*\bDay.*\b).*$/);
 const NameRegex = new RegExp(/^Request sent to.*/);
+const regexPrice = new RegExp('^(₹[1-9]*\d*|Actuals$|As per actuals)');
 var str = ''
 const arr = []
 /* Test cases list
@@ -45,7 +46,15 @@ describe('Request Listing Page Requestor View', () => {
             expect($ls.eq(0)).to.have.class('active')
             expect($ls.eq(1)).to.have.text(CONSTANTS.RAISED_BY_YOU)
             // expect($ls.eq(1), 'My Trips').to.contain(CONSTANTS.MY_TRIP)
+            
+            })
+            cy.get('div.travellerNo>p:nth-child(1)').each(($el) => {
+                expect($el.eq(0).text()).match(regex)
         })
+
+        cy.get('div.travellerNo>p:nth-child(2)').each(($el) => {
+            expect($el.text()).match(regexPrice)
+    })
 
     })
 
@@ -77,7 +86,7 @@ describe('Request Listing Page Requestor View', () => {
 
     })
 
-    it.only('Raised By You - Approved By You View', () => {
+    it('Raised By You - Approved By You View', () => {
         loginWithId(testdata[3].loginid, testdata[3].password)
         cy.intercept('home/tripRequests?view=requestor&reqTripSt=toBeApproved').as('tobeApproved')
         cy.visit('/requests/')
@@ -97,8 +106,7 @@ describe('Request Listing Page Requestor View', () => {
             cy.log(entry);
           }); 
         })
-       
-
+      
           
 
     })
@@ -109,6 +117,14 @@ describe('Request Listing Page Requestor View', () => {
 
     it('Raised By You - Others', () => {
 
+    })
+
+    it.only('Generic method to validate all the elements in a block in listing page',()=>{
+        loginWithId(testdata[0].loginid, testdata[0].password)
+        cy.visit('/requests/')
+        cy.get('li[data-testid]').each(($el,index,$list)=>{
+            cy.get($el)
+        })
     })
 })
 
