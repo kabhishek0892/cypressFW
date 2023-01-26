@@ -8,7 +8,7 @@ module.exports = defineConfig({
   reporterOptions: {
     reportDir: 'cypress/report',
     charts: true,
-    reportPageTitle: 'Q2T Automation Report',
+    reportPageTitle: 'Test Automation Report',
     reportFilename: '[status]_[datetime]-[name]-report',
     timestamp: 'longDate',
     overwrite: false,
@@ -20,7 +20,7 @@ module.exports = defineConfig({
     username: 'Abhishek',
     password: 'Test@123',
     email: 'Abhishek.kumar3test.com',
-    APIURL: 'http://corporate-api.quest2travel.org',
+    APIURL: '{{baseUrl}}',
   },
   e2e: {
     // We've imported your old cypress plugins here.
@@ -28,7 +28,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },
-    baseUrl: 'http://corporate.quest2travel.org',
+    baseUrl: '{{baseUrl}}',
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
   },
 })

@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-describe('Q2T Landing Page Test', () => {
+describe('Test Landing Page Test', () => {
     it('Launch login Page', () => {
         cy.visit('http://html.mmt.com:2096/Landing')
         cy.get('.container > .sprite').contains('Logo').should('be.visible')

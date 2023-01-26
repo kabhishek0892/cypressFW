@@ -4,7 +4,7 @@ import { CONSTANTS } from '../Utils/constants'
 
 describe.skip('Only Requestor Test suite', () => {
     it('Requestor sends Reminder for pending request ', () => {
-        loginWithId('q2ttsllemp', 'p@ssw0rd')
+        loginWithId('Testtsllemp', 'p@ssw0rd')
         cy.intercept("GET", "/home/tripRequests", { fixture: "trip-request-requestor-profile.json" })
         cy.visit('/home/')
         cy.get('.tripReqHeading > h2').should('be.visible').and('have.text', CONSTANTS.TRIP_REQUEST)

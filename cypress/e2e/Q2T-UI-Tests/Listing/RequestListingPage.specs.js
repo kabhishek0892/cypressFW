@@ -1,7 +1,7 @@
 import { loginWithId } from '../Utils/apiUtils'
 import { verifyFormattedText, verifyListisNotNull ,selectDropdownFromTabListingPage} from '../Utils/commonUtils'
 import { CONSTANTS } from '../Utils/constants'
-import testdata from '/Users/mmt9361/Desktop/Corp-Q2T-Test-Automation-UI/cypress/fixtures/users.json'
+import testdata from '/Users/mmt9361/Desktop/Corp-Test-Test-Automation-UI/cypress/fixtures/users.json'
 const travellerDays = new RegExp(/^(?=.*\bTraveller.*\b)(?=.*\bDay.*\b).*$/);
 const requestSentTo = new RegExp(/^Request sent to.*/);
 const regexPrice = new RegExp('^(₹[1-9]*\d*|Actuals$|As per actuals)');

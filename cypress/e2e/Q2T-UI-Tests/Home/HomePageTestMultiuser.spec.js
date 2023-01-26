@@ -1,7 +1,7 @@
 import { loginWithId } from '../Utils/apiUtils'
 import { CONSTANTS } from '../Utils/constants'
 import HomePage from './HomePage'
-const userdata = require('/../Corp-Q2T-Test-Automation-UI/cypress/fixtures/users.json')
+const userdata = require('/../Corp-Test-Test-Automation-UI/cypress/fixtures/users.json')
 
 userdata.forEach((credentials) => {
     describe('Home Page Tests with multiple users', function () {

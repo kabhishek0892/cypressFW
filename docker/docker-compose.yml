@@ -1,8 +1,8 @@
 version: '3.3'
 services:
-  corp-q2t-test-automation-ui:
-    image: "524881529748.dkr.ecr.ap-south-1.amazonaws.com/corp-q2t-test-automation-ui:${TAG}"
-    container_name: corp-q2t-test-automation-ui
+  corp-Test-test-automation-ui:
+    image: "524881529748.dkr.ecr.ap-south-1.amazonaws.com/corp-Test-test-automation-ui:${TAG}"
+    container_name: corp-Test-test-automation-ui
     environment:
       - env=prod
     healthcheck:
@@ -16,9 +16,9 @@ services:
     ports:
      - "8080:80"
     command: >
-      bash -c "mkdir -p /logs/q2t-automation && /usr/bin/supervisord -n -c /etc/supervisord.d/prod.conf"
+      bash -c "mkdir -p /logs/Test-automation && /usr/bin/supervisord -n -c /etc/supervisord.d/prod.conf"
     networks:
       - external
     networks:
       external:
-        name: corp-q2t-test-automation-ui
+        name: corp-Test-test-automation-ui
