@@ -1,10 +1,10 @@
 {
-        "baseUrl": "http://staging12.quest2travel.org/",
+        "baseUrl": "http://{{baseUrl}}/",
         "empDetails": {
             "clientId": "MMTPL",
             "clientLogo": "public/frontend/images/MMTPL.png",
             "clientName": "MakeMyTrip*",
-            "emailId": "abhishek.kumar3@go-mmt.com",
+            "emailId": "abhishek.kumar3test.com",
             "firstName": "ABHISHEK",
             "gender": "M",
             "initials": "Mr.",

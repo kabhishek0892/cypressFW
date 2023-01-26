@@ -10,7 +10,7 @@
                         "actualTripStartDate": "2022-01-28T18:30:00Z[UTC]",
                         "fromToCity": "Delhi - Pune",
                         "linksMap": {
-                            "requestDetails": "http://staging12.quest2travel.org/frontend/request/showCombinedRequestDetail/207080"
+                            "requestDetails": "http://{{baseUrl}}/frontend/request/showCombinedRequestDetail/207080"
                         },
                         "optedLobs": [
                             {

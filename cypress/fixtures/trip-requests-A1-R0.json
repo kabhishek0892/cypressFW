@@ -12,7 +12,7 @@
                         "approverId": "Q2T0246717",
                         "fromToCity": "Delhi - Mumbai",
                         "linksMap": {
-                            "requestDetails": "http://staging12.quest2travel.org/frontend/viewapprovals/showCombinedApproverDetails/201465"
+                            "requestDetails": "http://{{baseUrl}}/frontend/viewapprovals/showCombinedApproverDetails/201465"
                         },
                         "optedLobs": [
                             {

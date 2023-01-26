@@ -111,3 +111,20 @@ export function verifyLobListAndHierarchy(listlocator,region) {
       })
       
   }
+
+  export function selectDropdownFromTabListingPage(tabname,dropdownvalue){
+
+  //  cy.get('.tripReqWrap > h2').should('be.visible').and('have.text', CONSTANTS.MY_REQUEST)
+        cy.get('.tripReqWrap > h2').then(() => {
+             cy.get('.tripReqTab').find('>li').filter(":contains(\"" + tabname + "\")").click({force: true})
+          })
+            cy.get('.selectOutput').then(($dropdown) => {
+                if ($dropdown) {
+                 $dropdown.click()
+                 cy.get('.selectOuter>ul').find('>li').filter(":contains(\"" + dropdownvalue + "\")").click({force: true})
+                } else {
+                  // do something else
+                }
+              })
+
+  }

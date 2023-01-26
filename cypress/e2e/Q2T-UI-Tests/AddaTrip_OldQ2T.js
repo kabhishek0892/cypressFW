@@ -3,7 +3,7 @@ describe('Demo Test suite',()=>{
     it('Test Home Page',()=>{
     loginWithId('Abhishek','test@123')
     cy.viewport('macbook-16')
-    cy.visit('http://staging12.quest2travel.org/frontend/singlerequest/selectServices')
+    cy.visit('http://{{baseUrl}}/frontend/singlerequest/selectServices')
     cy.wait(4000)
     cy.get('.scroll_height > :nth-child(2)').then($closeIcon => {
         if ($closeIcon.is(':visible')){

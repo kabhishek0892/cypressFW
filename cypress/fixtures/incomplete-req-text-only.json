@@ -3,7 +3,7 @@
         "incompleteRequest": {
             "inCompleteReqFlag": true,
             "inCompleteReqText": "Trip Id: 201545 last saved at 09:58 AM, Dec 2 with services like Rail & Bus and 1 other service.",
-            "requestDetailsLink": "http://staging12.quest2travel.org/frontend/singlerequest/selectServices/1/1/201545",
+            "requestDetailsLink": "http://{{baseUrl}}/frontend/singlerequest/selectServices/1/1/201545",
             "sectionTitle": "You have an Incomplete Request"
         }
     },

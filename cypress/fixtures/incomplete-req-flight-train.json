@@ -4,7 +4,7 @@
             "inCompleteReqFlag": false,
             "itineraryDate": "Wed,<span class='latoBold'> Dec 22</span> - Thu,<span class='latoBold'> Dec 30</span>",
             "lastSavedDate": "LAST SAVED- 1:27 PM, Nov 30",
-            "requestDetailsLink": "http://staging12.quest2travel.org/frontend/singlerequest/selectServices/1/1/201545",
+            "requestDetailsLink": "http://{{baseUrl}}/frontend/singlerequest/selectServices/1/1/201545",
             "sectionTitle": "Complete Your Request",
             "services": [
                 {

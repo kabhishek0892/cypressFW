@@ -19,7 +19,7 @@ module.exports = defineConfig({
   env: {
     username: 'Abhishek',
     password: 'Test@123',
-    email: 'Abhishek.kumar3@go-mmt.com',
+    email: 'Abhishek.kumar3test.com',
     APIURL: 'http://corporate-api.quest2travel.org',
   },
   e2e: {

@@ -11,7 +11,7 @@
                         "approverId": "Q2T0246717",
                         "fromToCity": "Delhi - Bangalore",
                         "linksMap": {
-                            "requestDetails": "http://staging12.quest2travel.org/frontend/viewapprovals/showCombinedApproverDetails/200875"
+                            "requestDetails": "http://{{baseUrl}}/frontend/viewapprovals/showCombinedApproverDetails/200875"
                         },
                         "optedLobs": [
                             {
@@ -34,7 +34,7 @@
                         "approverId": "Q2T0246717",
                         "fromToCity": "Del - Mum",
                         "linksMap": {
-                            "requestDetails": "http://staging12.quest2travel.org/frontend/viewapprovals/showCombinedApproverDetails/201465"
+                            "requestDetails": "http://{{baseUrl}}/frontend/viewapprovals/showCombinedApproverDetails/201465"
                         },
                         "optedLobs": [
                             {
@@ -57,7 +57,7 @@
                         "approverId": "Q2T0246717",
                         "fromToCity": "Pune - Delhi",
                         "linksMap": {
-                            "requestDetails": "http://staging12.quest2travel.org/frontend/viewapprovals/showCombinedApproverDetails/201999"
+                            "requestDetails": "http://{{baseUrl}}/frontend/viewapprovals/showCombinedApproverDetails/201999"
                         },
                         "optedLobs": [
                             {
@@ -88,7 +88,7 @@
                         "actualTripStartDate": "2021-11-30T18:30:00Z[UTC]",
                         "fromToCity": "Delhi - Hyderabad",
                         "linksMap": {
-                            "requestDetails": "http://staging12.quest2travel.org/frontend/viewapprovals/showCombinedApproverDetails/201088"
+                            "requestDetails": "http://{{baseUrl}}/frontend/viewapprovals/showCombinedApproverDetails/201088"
                         },
                         "optedLobs": [
                             {
@@ -115,7 +115,7 @@
                         "actualTripStartDate": "2021-12-04T18:30:00Z[UTC]",
                         "fromToCity": "Delhi - Bangalore",
                         "linksMap": {
-                            "requestDetails": "http://staging12.quest2travel.org/frontend/viewapprovals/showCombinedApproverDetails/200875"
+                            "requestDetails": "http://{{baseUrl}}/frontend/viewapprovals/showCombinedApproverDetails/200875"
                         },
                         "optedLobs": [
                             {
@@ -142,7 +142,7 @@
                         "actualTripStartDate": "2021-12-15T18:30:00Z[UTC]",
                         "fromToCity": "Pune - Delhi",
                         "linksMap": {
-                            "requestDetails": "http://staging12.quest2travel.org/frontend/viewapprovals/showCombinedApproverDetails/201999"
+                            "requestDetails": "http://{{baseUrl}}/frontend/viewapprovals/showCombinedApproverDetails/201999"
                         },
                         "optedLobs": [
                             {

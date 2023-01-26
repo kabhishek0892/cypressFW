@@ -42,8 +42,10 @@ export const CONSTANTS = {
     TRAVEL_GUIDELINES : "Travel Guidelines",
     USER_TRVL_POLCIY : "User Travel Policy",
     USER_MANNUAL :"User Manual",
-    TOBE_APPROVED : "To be Approved",
+    TOBE_APPROVED : "To be approved",
     APPROVED : "Approved",
     OTHERS : "Others",
-    TRIP_DURATION :"Trip Duration"
+    TRIP_DURATION :"Trip Duration",
+    VIEW_REQUEST_DETAIL_CTA : "View request detail",
+    YET_TO_APPROVE : "Yet to approve"
     };

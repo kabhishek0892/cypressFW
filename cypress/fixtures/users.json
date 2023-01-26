@@ -2,25 +2,31 @@
   {
     "name": "Name1",
     "loginid": "Abhishek",
-    "email": "Abhishek.kumar3@go-mmt.com",
+    "email": "Abhishek.kumar3test.com",
     "password": "Test@123"
   },
   {
     "name": "Name2",
     "loginid": "gauravk",
-    "email": "gaurav.kesharwani@go-mmt.com",
+    "email": "gaurav.kesharwanitest.com",
     "password": "Track@1234"
   },
   {
     "name": "Name1",
     "loginid": "pratikshit",
-    "email": "pratikshit.bansal@go-mmt.com",
+    "email": "pratikshit.bansaltest.com",
     "password": "test@123"
   },
   {
     "name": "Name4",
     "loginid": "MMTmanish",
-    "email": "pratikshit.bansal@go-mmt.com",
+    "email": "pratikshit.bansaltest.com",
     "password": "Test@123"
+  },
+  {
+    "name": "Name5",
+    "loginid": "avinash",
+    "email": "pratikshit.bansaltest.com",
+    "password": "Dash@123"
   }
 ]

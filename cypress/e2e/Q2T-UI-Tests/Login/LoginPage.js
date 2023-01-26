@@ -133,7 +133,7 @@ class LoginPage {
     }
 
     login(){
-        this.fillEmail("Abhishek.kumar@go-mmt.com")
+        this.fillEmail("Abhishek.kumartest.com")
         this.fillPassword("Test@123")
         this.clickOnNextButton()
         this. clickOnContinueButton()

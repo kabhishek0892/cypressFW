@@ -11,7 +11,8 @@ describe('Incomplete Request Test suite', function () {
         cy.viewport('macbook-16')
     })
     beforeEach(() => {
-        loginWithEmail(Cypress.env('email'), Cypress.env('password'))
+        loginWithEmail(Cypress.env('email'), Cypress.env('password')) 
+        //cy.get('.welcomeBtmSheet > .sprite').click()
     })
 
     /*afterEach(()=>{
@@ -20,9 +21,10 @@ describe('Incomplete Request Test suite', function () {
 
      //after block to delete that extra payload created 
 
-    it('incompleterequest with domestic travel with rail and flight', () => {
+    it.only('incompleterequest with domestic travel with rail and flight', () => {
         cy.intercept("GET", "/home/inCompleteRequest", { fixture: "incomplete-req-flight-train.json" }).as('incompleteReq')
         cy.visit('/home/')
+        cy.get('.welcomeBtmSheet > .sprite').click()
         cy.fixture('incomplete-req-flight-train').then(req => {
             cy.get('p.destination').eq(0).should('contain.text', req.data.incompleteRequest.services[0].title)
             cy.get('p.destination').eq('1').should('contain.text', req.data.incompleteRequest.services[1].title)

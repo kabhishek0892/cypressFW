@@ -6,12 +6,12 @@
                 "clTripNo": "198591",
                 "nameOfTraveller": "Mr. Abhishek Kumar",
                 "purpose": "O",
-                "redirectionLink": "http://staging12.quest2travel.org/frontend/airlineservices/domairbookingDetails/198591_13-11-2021_08:09:46_PM",
+                "redirectionLink": "http://{{baseUrl}}/frontend/airlineservices/domairbookingDetails/198591_13-11-2021_08:09:46_PM",
                 "serviceData": {
                     "Flight": [
                         {
                             "layoverCount": 0,
-                            "logo": "http://staging12.quest2travel.org/public/frontend/images/SG.png",
+                            "logo": "http://{{baseUrl}}/public/frontend/images/SG.png",
                             "tripAirName": "Spicejet",
                             "tripArrtime": "2021-12-27T08:15:00",
                             "tripDeptime": "2021-12-27T06:50:00",
@@ -52,12 +52,12 @@
                 "clTripNo": "197337",
                 "nameOfTraveller": "Ms. Ayushi Mittal",
                 "purpose": "O",
-                "redirectionLink": "http://staging12.quest2travel.org/frontend/airlineservices/domairbookingDetails/197337_02-11-2021_05:01:45_PM",
+                "redirectionLink": "http://{{baseUrl}}/frontend/airlineservices/domairbookingDetails/197337_02-11-2021_05:01:45_PM",
                 "serviceData": {
                     "Flight": [
                         {
                             "layoverCount": 1,
-                            "logo": "http://staging12.quest2travel.org/public/frontend/images/AI.png",
+                            "logo": "http://{{baseUrl}}/public/frontend/images/AI.png",
                             "tripAirName": "Air India",
                             "tripArrtime": "2021-12-14T10:50:00",
                             "tripDeptime": "2021-12-14T08:45:00",
@@ -72,7 +72,7 @@
                         },
                         {
                             "layoverCount": 1,
-                            "logo": "http://staging12.quest2travel.org/public/frontend/images/6E.png",
+                            "logo": "http://{{baseUrl}}/public/frontend/images/6E.png",
                             "tripAirName": "Indigo",
                             "tripArrtime": "2021-12-17T12:40:00",
                             "tripDeptime": "2021-12-17T10:05:00",
@@ -113,7 +113,7 @@
                 "clTripNo": "197154",
                 "nameOfTraveller": "Ms. Ayushi Mittal",
                 "purpose": "O",
-                "redirectionLink": "http://staging12.quest2travel.org/frontend/hotelservices/hotelitinerarydetail/197154/525813/500100033532",
+                "redirectionLink": "http://{{baseUrl}}/frontend/hotelservices/hotelitinerarydetail/197154/525813/500100033532",
                 "serviceData": {
                     "Hotel": {
                         "tripHtlCheckIn": "2021-12-05T14:00:00",

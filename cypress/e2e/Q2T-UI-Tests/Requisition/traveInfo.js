@@ -88,4 +88,23 @@ describe ('Traveller Information Testcases',()=>{
 
     })
 
+    it.only('Search text with valid input param and show results',()=>{
+        cy.get('label[for="bookingFor"]').should('have.text',REQ_CONSTANTS.BOOKING_FOR).click()
+        cy.get('#bookingFor>li').contains('Business Group').click();
+        cy.get('.addMoreTrl').should('have.text',REQ_CONSTANTS.ADD_TRAVELLER_MSG).click()
+        cy.get('.addSearchWrap > .sprite').should('be.visible')
+        cy.get('.travellerDwnHeading').should('contain',REQ_CONSTANTS.ADD_TRAVELLER)
+        cy.get('.addSearchWrap>input').invoke('attr','placeholder').should('contain', REQ_CONSTANTS.ENTERTRAVLRNM)
+        cy.get(INPUT_BUTTON_SELECTOR).clear().type('abh').wait(2000)
+        
+       
+
+
+
+        
+
+
+
+    })
+
 })
